@@ -1,0 +1,25 @@
+using UnityEngine;
+
+namespace Tools
+{
+    public abstract class Tool : MonoBehaviour
+    {
+        [SerializeField] protected Transform holdingPoint;
+        public Transform HoldingPoint => holdingPoint;
+        
+        [SerializeField] protected Vector3 holdingRotation;
+        public Vector3 HoldingRotation => holdingRotation;
+
+        public abstract void Use();
+
+        public virtual void StopUse()
+        {
+            
+        }
+        
+        public void BringToHand(Vector3 handPosition)
+        {
+            transform.MoveChildTo(holdingPoint, handPosition);
+        }
+    }
+}
