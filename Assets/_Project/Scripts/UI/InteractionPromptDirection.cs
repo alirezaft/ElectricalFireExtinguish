@@ -6,10 +6,15 @@ namespace UI
     public class InteractionPromptDirection : MonoBehaviour
     {
         [SerializeField] private float distanceFromObject;
+        
 
         private void OnEnable()
         {
-            transform.position = transform.parent.position + transform.parent.transform.up * distanceFromObject;
+            Debug.Log(transform.parent.position);
+            Debug.Log(transform.parent.up);
+            Debug.Log(transform.position);
+            
+            transform.position = transform.parent.position + (Vector3.up * distanceFromObject);
         }
 
         private void LateUpdate()
