@@ -182,8 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88ec82ea787c57498a862f0a64bbe8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 7
-  spherecastRadius: 2
+  playerCamera: {fileID: 8007159064288742466}
+  interactionDistance: 2.5
+  sphereRadius: 0.18
+  toolTag: Tool
 --- !u!1 &3052674065908177334
 GameObject:
   m_ObjectHideFlags: 0

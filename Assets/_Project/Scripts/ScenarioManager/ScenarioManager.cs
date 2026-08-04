@@ -4,13 +4,10 @@ using Tools;
 using UnityEngine;
 using VisualEffects;
 
-namespace ScenarioManager
+namespace GameManager
 {
     public class ScenarioManager : MonoBehaviour
     {
-        private static ScenarioManager instance;
-        public static ScenarioManager Instance => instance;
-        
         [SerializeField] private Step firstStep;
         private Step currentStep;
 
@@ -23,11 +20,6 @@ namespace ScenarioManager
 
         private void Awake()
         {
-            if (instance is null)
-                instance = this;
-            else
-                Destroy(this);
-
             currentStep = firstStep;
             UpdateGame();
         }
@@ -43,11 +35,10 @@ namespace ScenarioManager
             OnStepChange?.Invoke(currentStep);
 
             var requiredTool = tools.FirstOrDefault(tool => tool.ToolType == currentStep.RequiredTool);
-            Debug.Log(requiredTool.ToolType.ID);
             
             if (requiredTool is null)
                 throw new NullReferenceException("Step required tool was not found in scenario manager tool list");
-            
+
             requiredTool.GetComponent<Highlighter>().enabled = true;
         }
         

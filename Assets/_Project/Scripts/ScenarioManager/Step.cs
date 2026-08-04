@@ -2,7 +2,7 @@ using System;
 using Tools;
 using UnityEngine;
 
-namespace ScenarioManager
+namespace GameManager
 {
     [CreateAssetMenu(menuName = "Game/Scenario Step", fileName = "New Scenario Step")]
     public class Step : ScriptableObject
@@ -15,7 +15,8 @@ namespace ScenarioManager
         
         [SerializeField] private GameObject targetObject;
 
-        [SerializeField] private string objective;
+        [SerializeField] private string objectiveText;
+        public string ObjectiveText => objectiveText;
 
         public event Action OnStepStart;
         public event Action OnStepComplete;
