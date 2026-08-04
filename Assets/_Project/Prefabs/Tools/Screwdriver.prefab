@@ -96,6 +96,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: toolType
+      value: 
+      objectReference: {fileID: 11400000, guid: 51ee3da6592b4b040926ab9477028774, type: 2}
+    - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: holdingRotation.x
       value: 68.37905
       objectReference: {fileID: 0}

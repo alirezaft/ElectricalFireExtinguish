@@ -4,6 +4,7 @@ namespace Tools
 {
     public abstract class Tool : MonoBehaviour
     {
+        [SerializeField] private ToolType toolType;
         [SerializeField] protected Transform holdingPoint;
         public Transform HoldingPoint => holdingPoint;
         
