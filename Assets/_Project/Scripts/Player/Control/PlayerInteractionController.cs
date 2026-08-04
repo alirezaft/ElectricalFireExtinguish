@@ -54,12 +54,13 @@ namespace Player.Control
             if (lookedTool == previousLookedTool)
                 return;
 
+            bool isInteractionAvailable;
             if (previousLookedTool != null)
                 OnLookExit(previousLookedTool);
 
             previousLookedTool = lookedTool;
 
-            if (previousLookedTool != null)
+            if (previousLookedTool != null && scenarioManager.IsCurrentInteraction(previousLookedTool))
                 OnLookEnter(previousLookedTool);
         }
 
@@ -68,9 +69,9 @@ namespace Player.Control
             interactionManager.CancelInteractionAttempt(tool);
         }
 
-        private void OnLookEnter(Tool tool)
+        private bool OnLookEnter(Tool tool)
         {
-            interactionManager.AttemptInteraction(tool);
+            return interactionManager.AttemptInteraction(tool);
         }
 
         private void EquipTool(GameObject tool)
