@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0a42ca7a6c9e44995784dd474fe815, type: 3}
   m_Name: NoTool
   m_EditorClassIdentifier: 
-  id: 
+  id: NoTool
