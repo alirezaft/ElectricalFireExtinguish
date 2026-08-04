@@ -560,6 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveText: {fileID: 933667560}
+  scenarioManager: {fileID: 944005120}
 --- !u!114 &933667560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,7 +646,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -799.7653, y: 0, z: 0, w: -37.650574}
+  m_margin: {x: -1714.5338, y: 0, z: 0, w: -37.650574}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -674,8 +675,9 @@ GameObject:
   m_Component:
   - component: {fileID: 944005121}
   - component: {fileID: 944005120}
+  - component: {fileID: 944005122}
   m_Layer: 0
-  m_Name: ScenarioManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -715,6 +717,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944005122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944005119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f95f851e6f52d34f8694d31c411f36d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenarioManager: {fileID: 944005120}
 --- !u!1 &1175085364
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,9 +863,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8691735438298967838, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
+      propertyPath: scenarioManager
+      value: 
+      objectReference: {fileID: 944005120}
+    - target: {fileID: -8691735438298967838, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: spherecastRadius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: -8691735438298967838, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
+      propertyPath: interactionManager
+      value: 
+      objectReference: {fileID: 944005122}
     - target: {fileID: 553571043633348168, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19

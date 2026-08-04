@@ -41,6 +41,10 @@ namespace GameManager
 
             requiredTool.GetComponent<Highlighter>().enabled = true;
         }
-        
+
+        public bool IsCurrentInteraction(Tool tool)
+        {
+            return tool.ToolType == currentStep.RequiredTool;
+        }
     }
 }

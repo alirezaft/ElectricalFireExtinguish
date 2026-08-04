@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameManager;
 using Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,6 +12,9 @@ namespace Player.Control
         [Header("References")] [SerializeField]
         private Camera playerCamera;
 
+        [SerializeField] private ScenarioManager scenarioManager;
+        [SerializeField] private InteractionManager interactionManager;
+
         [Header("Interaction")] [SerializeField]
         private float interactionDistance = 3f;
 
@@ -19,7 +23,17 @@ namespace Player.Control
 
         public GameObject CurrentTarget { get; private set; }
 
+        private Tool previousLookedTool;
+
         private void Update()
+        {
+            var lookedTool = FindLookedAtTool();
+            ChangeToolFocus(lookedTool);
+
+            CurrentTarget = null;
+        }
+
+        private Tool FindLookedAtTool()
         {
             if (Physics.SphereCast(
                     playerCamera.transform.position,
@@ -28,17 +42,40 @@ namespace Player.Control
                     out RaycastHit hit,
                     interactionDistance))
             {
-                
+                if (hit.collider.TryGetComponent(out Tool tool))
+                    return tool;
             }
 
-            CurrentTarget = null;
+            return null;
+        }
+
+        private void ChangeToolFocus(Tool lookedTool)
+        {
+            if (lookedTool == previousLookedTool)
+                return;
+
+            if (previousLookedTool != null)
+                OnLookExit(previousLookedTool);
+
+            previousLookedTool = lookedTool;
+
+            if (previousLookedTool != null)
+                OnLookEnter(previousLookedTool);
+        }
+
+        private void OnLookExit(Tool tool)
+        {
+            interactionManager.CancelInteractionAttempt(tool);
+        }
+
+        private void OnLookEnter(Tool tool)
+        {
+            interactionManager.AttemptInteraction(tool);
         }
 
         private void EquipTool(GameObject tool)
         {
             Debug.Log($"Equipped {tool.name}");
-
-            
         }
 
 #if UNITY_EDITOR
