@@ -1,6 +1,7 @@
 using System;
 using GameManager;
 using UnityEngine;
+using VisualEffects;
 
 namespace Tools
 {
@@ -8,6 +9,8 @@ namespace Tools
     {
         [SerializeField] protected InteractionPrompt interactionPrompt;
         [SerializeField] protected ScenarioManager scenarioManager;
+        [SerializeField] protected Highlighter highlighter;
+
         
         public virtual void Focus()
         {

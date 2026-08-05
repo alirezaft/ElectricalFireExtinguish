@@ -21,7 +21,7 @@ namespace GameManager
 
         public event Action<Step> OnStepChange;
 
-        private void Awake()
+        private void Start()
         {
             currentStep = firstStep;
             UpdateGame();
@@ -47,7 +47,7 @@ namespace GameManager
         private void UpdateGame()
         {
             OnStepChange?.Invoke(currentStep);
-
+            
             
         }
 

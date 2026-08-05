@@ -15,9 +15,7 @@ namespace Tools
         
         [SerializeField] protected Vector3 holdingRotation;
         public Vector3 HoldingRotation => holdingRotation;
-
-        [SerializeField] private Highlighter highlighter;
-
+        
         public abstract void Use();
 
         public virtual void StopUse()
@@ -29,7 +27,11 @@ namespace Tools
         {
             scenarioManager.OnStepChange += EnableHighlight;
         }
-        
+
+        private void OnDisable()
+        {
+            scenarioManager.OnStepChange -= EnableHighlight;
+        }
 
         private void EnableHighlight(Step step)
         {

@@ -1,3 +1,4 @@
+using GameManager;
 using Parts;
 using Tools;
 using UnityEngine;
@@ -11,15 +12,31 @@ public class Part : Interactable
     [SerializeField] private Transform interactionPoint;
     public Transform InteractionPoint => interactionPoint;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnEnable()
     {
-        
+        scenarioManager.OnStepChange += EnableHighlight;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        scenarioManager.OnStepChange -= EnableHighlight;
+    }
+
+    private void EnableHighlight(Step step)
+    {
+        if (step is not PartInteractionStep)
+        {
+            highlighter.enabled = false;
+            interactionPrompt.DisableInteractionUI();
+                
+            return;
+        }
+
+        var s = step as PartInteractionStep;
+
+        if (s.TragetPart == PartType)
+        {
+            highlighter.enabled = true;
+        }
     }
 }
