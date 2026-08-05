@@ -24,7 +24,7 @@ namespace Player.Control
         [SerializeField] private float sphereRadius = 0.25f;
         
 
-        private Tool previousLookedTool;
+        private Interactable previousLookedTool;
 
         private void Update()
         {
@@ -80,12 +80,12 @@ namespace Player.Control
                 previousLookedTool = null;
         }
 
-        private void OnLookExit(Tool tool)
+        private void OnLookExit(Interactable tool)
         {
             interactionManager.CancelInteractionAttempt(tool);
         }
 
-        private bool OnLookEnter(Tool tool)
+        private bool OnLookEnter(Interactable tool)
         {
             return interactionManager.AttemptInteraction(tool);
         }
@@ -93,14 +93,14 @@ namespace Player.Control
 
         private void OnInteractPressed(InputAction.CallbackContext ctx)
         {
-            if (previousLookedTool is null)
+            if (previousLookedTool is null || previousLookedTool is not Tool tool)
                 return;
             
-            previousLookedTool.transform.MoveChildTo(previousLookedTool.HoldingPoint, handPosition.position);
-            previousLookedTool.transform.rotation = Quaternion.Euler(previousLookedTool.HoldingRotation);
+            previousLookedTool.transform.MoveChildTo(tool.HoldingPoint, handPosition.position);
+            previousLookedTool.transform.rotation = Quaternion.Euler(tool.HoldingRotation);
             previousLookedTool.transform.parent = handPosition;
             
-            equipper.EquipTool(previousLookedTool);
+            equipper.EquipTool(tool);
         }
         
         private void EquipTool(Tool tool)
