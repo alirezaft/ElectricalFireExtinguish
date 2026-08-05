@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6766872161554794341}
   - component: {fileID: -8113748014786882420}
   - component: {fileID: 4365329959872653172}
+  - component: {fileID: 6817086706737955040}
+  - component: {fileID: 446246396763510780}
   m_Layer: 0
   m_Name: Tool
   m_TagString: Tool
@@ -89,6 +91,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolInteractionPromptUI: {fileID: 3685723921707833692}
+--- !u!95 &6817086706737955040
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564575472828487484}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &446246396763510780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564575472828487484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6574653f366b4c4696b1d9c3c3f6b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6817086706737955040}
+  interactionTriggerName: Use
 --- !u!1 &4434513040551626391
 GameObject:
   m_ObjectHideFlags: 0
