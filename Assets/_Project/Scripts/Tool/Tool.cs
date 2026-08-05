@@ -1,4 +1,7 @@
+using System;
+using GameManager;
 using UnityEngine;
+using VisualEffects;
 
 namespace Tools
 {
@@ -13,13 +16,39 @@ namespace Tools
         [SerializeField] protected Vector3 holdingRotation;
         public Vector3 HoldingRotation => holdingRotation;
 
+        [SerializeField] private Highlighter highlighter;
+
         public abstract void Use();
 
         public virtual void StopUse()
         {
             
         }
+
+        private void OnEnable()
+        {
+            scenarioManager.OnStepChange += EnableHighlight;
+        }
         
+
+        private void EnableHighlight(Step step)
+        {
+            if (step is not EquipToolStep)
+            {
+                highlighter.enabled = false;
+                interactionPrompt.DisableInteractionUI();
+                
+                return;
+            }
+
+            var s = step as EquipToolStep;
+
+            if (s.RequiredTool == toolType)
+            {
+                highlighter.enabled = true;
+            }
+        }
+
         public void BringToHand(Vector3 handPosition)
         {
             transform.MoveChildTo(holdingPoint, handPosition);

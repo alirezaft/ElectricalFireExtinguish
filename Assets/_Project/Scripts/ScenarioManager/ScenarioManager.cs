@@ -15,7 +15,7 @@ namespace GameManager
 
         [SerializeField] private Equipper playerEquipper;
         public Equipper PlayerEquipper => playerEquipper;
-        
+
         [SerializeField] private Tool[] tools;
         [SerializeField] private Part[] parts;
 
@@ -40,6 +40,7 @@ namespace GameManager
         public void GoToNextStep()
         {
             currentStep = currentStep.NextStep;
+            OnStepChange?.Invoke(currentStep);
             UpdateGame();
         }
 
@@ -47,12 +48,7 @@ namespace GameManager
         {
             OnStepChange?.Invoke(currentStep);
 
-            var requiredTool = tools.FirstOrDefault(tool => tool.ToolType == ((EquipToolStep)currentStep).RequiredTool);
             
-            if (requiredTool is null)
-                throw new NullReferenceException("Step required tool was not found in scenario manager tool list");
-
-            requiredTool.GetComponent<Highlighter>().enabled = true;
         }
 
         public bool IsCurrentInteraction(Interactable interactable)
@@ -62,7 +58,11 @@ namespace GameManager
 
         private void OnPlayerToolEquipped(Tool tool)
         {
-            playerEquipper.CurrentTool.GetComponent<Highlighter>().enabled = false;
+            if (currentStep is not EquipToolStep step)
+                throw new ArgumentException("This step shouldn't allow tool equipment");
+            
+            if (tool.ToolType == step.RequiredTool)
+                GoToNextStep();
         }
     }
 }
