@@ -24,7 +24,7 @@ namespace Player.Control
         [SerializeField] private float sphereRadius = 0.25f;
         
 
-        private Tool previousLookedTool;
+        private Interactable previousLookedInteractable;
 
         private void Update()
         {
@@ -59,33 +59,33 @@ namespace Player.Control
             return null;
         }
 
-        private void ChangeFocus(Tool lookedTool)
+        private void ChangeFocus(Interactable lookedTool)
         {
-            if (lookedTool == previousLookedTool)
+            if (lookedTool == previousLookedInteractable)
                 return;
 
-            if (previousLookedTool != null)
-                OnLookExit(previousLookedTool);
+            if (previousLookedInteractable != null)
+                OnLookExit(previousLookedInteractable);
 
-            previousLookedTool = lookedTool;
+            previousLookedInteractable = lookedTool;
 
-            if (previousLookedTool == null)
+            if (previousLookedInteractable == null)
                 return;
             
-            var isToolRequired = scenarioManager.IsCurrentInteraction(previousLookedTool);
+            var isToolRequired = scenarioManager.IsCurrentInteraction(previousLookedInteractable);
 
-            if (previousLookedTool != null && isToolRequired)
-                OnLookEnter(previousLookedTool);
-            else if (previousLookedTool != null && !isToolRequired)
-                previousLookedTool = null;
+            if (previousLookedInteractable != null && isToolRequired)
+                OnLookEnter(previousLookedInteractable);
+            else if (previousLookedInteractable != null && !isToolRequired)
+                previousLookedInteractable = null;
         }
 
-        private void OnLookExit(Tool tool)
+        private void OnLookExit(Interactable tool)
         {
             interactionManager.CancelInteractionAttempt(tool);
         }
 
-        private bool OnLookEnter(Tool tool)
+        private bool OnLookEnter(Interactable tool)
         {
             return interactionManager.AttemptInteraction(tool);
         }
@@ -93,14 +93,14 @@ namespace Player.Control
 
         private void OnInteractPressed(InputAction.CallbackContext ctx)
         {
-            if (previousLookedTool is null)
+            if (previousLookedInteractable is null || previousLookedInteractable is not Tool tool)
                 return;
             
-            previousLookedTool.transform.MoveChildTo(previousLookedTool.HoldingPoint, handPosition.position);
-            previousLookedTool.transform.rotation = Quaternion.Euler(previousLookedTool.HoldingRotation);
-            previousLookedTool.transform.parent = handPosition;
+            previousLookedInteractable.transform.MoveChildTo(tool.HoldingPoint, handPosition.position);
+            previousLookedInteractable.transform.rotation = Quaternion.Euler(tool.HoldingRotation);
+            previousLookedInteractable.transform.parent = handPosition;
             
-            equipper.EquipTool(previousLookedTool);
+            equipper.EquipTool(tool);
         }
         
         private void EquipTool(Tool tool)
