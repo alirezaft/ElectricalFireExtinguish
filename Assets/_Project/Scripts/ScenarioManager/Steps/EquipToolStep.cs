@@ -11,9 +11,8 @@ namespace GameManager
 
         public override bool CanInteract(Interactable interactable, ScenarioManager manager)
         {
-            if (interactable is not Tool) return false;
+            if (interactable is not Tool tool) return false;
             
-            var tool = interactable as Tool;
             if (tool.ToolType != requiredTool) return false;
             
             return true;

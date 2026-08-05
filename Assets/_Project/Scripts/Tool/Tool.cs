@@ -16,7 +16,7 @@ namespace Tools
         [SerializeField] protected Vector3 holdingRotation;
         public Vector3 HoldingRotation => holdingRotation;
         
-        public abstract void Use();
+        public abstract void Use(Part targetPart);
 
         public virtual void StopUse()
         {

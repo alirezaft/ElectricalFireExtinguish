@@ -28,22 +28,24 @@ namespace Player.Control
 
         private void Update()
         {
-            var lookedTool = FindLookedAtTool();
+            var lookedTool = FindLookedAtInteractable();
             ChangeFocus(lookedTool);
         }
 
         private void OnEnable()
         {
             InputSystem.actions.FindAction("Interact").performed += OnInteractPressed;
+            InputSystem.actions.FindAction("Attack").performed += OnUseToolPressed;
             Debug.Log("Subscribed successfully");
         }
+
 
         private void OnDisable()
         {
             InputSystem.actions.FindAction("Interact").performed -= OnInteractPressed;
         }
 
-        private Tool FindLookedAtTool()
+        private Interactable FindLookedAtInteractable()
         {
             if (Physics.SphereCast(
                     playerCamera.transform.position,
@@ -52,8 +54,9 @@ namespace Player.Control
                     out RaycastHit hit,
                     interactionDistance))
             {
-                if (hit.collider.TryGetComponent(out Tool tool))
-                    return tool;
+                if (hit.collider.TryGetComponent(out Interactable interactable))
+                    Debug.Log(interactable.gameObject.name);
+                    return interactable;
             }
 
             return null;
@@ -103,9 +106,16 @@ namespace Player.Control
             equipper.EquipTool(tool);
         }
         
-        private void EquipTool(Tool tool)
+        
+        private void OnUseToolPressed(InputAction.CallbackContext obj)
         {
-            
+            if (equipper.CurrentTool is null || previousLookedInteractable is not Part part)
+                return;
+
+            var tool = equipper.CurrentTool;
+
+            // tool.transform.parent = null;
+            tool.Use(part);
         }
 
 #if UNITY_EDITOR

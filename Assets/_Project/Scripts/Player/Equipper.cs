@@ -12,6 +12,7 @@ public class Equipper : MonoBehaviour
 
     public void EquipTool(Tool tool)
     {
+        tool.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         currentTool = tool;
         Debug.Log(tool.ToolType);
         OnToolEquipped?.Invoke(tool);
