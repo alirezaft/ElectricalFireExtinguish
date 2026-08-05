@@ -24,5 +24,13 @@ namespace GameManager
 
             return true;
         }
+
+        public bool CanUseTool(Tool tool, Part part)
+        {
+            if (RequiredTool != tool.ToolType) return false;
+            if (TragetPart != part.PartType) return false;
+
+            return true;
+        }
     }
 }

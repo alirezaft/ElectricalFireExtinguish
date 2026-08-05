@@ -56,6 +56,13 @@ namespace GameManager
             return currentStep.CanInteract(interactable, this);
         }
 
+        public bool CanUseTool(Tool tool, Part part)
+        {
+            if (currentStep is not PartInteractionStep step) return false;
+
+            return step.CanUseTool(tool, part);
+        }
+
         private void OnPlayerToolEquipped(Tool tool)
         {
             if (currentStep is not EquipToolStep step)
@@ -63,6 +70,19 @@ namespace GameManager
             
             if (tool.ToolType == step.RequiredTool)
                 GoToNextStep();
+        }
+
+        public void PlayPartAnimation()
+        {
+            var step = currentStep as PartInteractionStep;
+            var targetPart = parts.FirstOrDefault(part => part.PartType == step.TragetPart);
+
+            targetPart.GetComponent<InteractableAnimator>().PlayAnimation();
+        }
+
+        public void FinalizeStep()
+        {
+            GoToNextStep();
         }
     }
 }

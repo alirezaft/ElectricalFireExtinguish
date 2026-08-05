@@ -10,11 +10,14 @@ namespace Tools
         [SerializeField] private ToolType toolType;
         public ToolType ToolType => toolType;
 
+        [SerializeField] protected InteractableAnimator interactableAnimator;
+
         [SerializeField] protected Transform holdingPoint;
         public Transform HoldingPoint => holdingPoint;
         
         [SerializeField] protected Vector3 holdingRotation;
         public Vector3 HoldingRotation => holdingRotation;
+        
         
         public abstract void Use(Part targetPart);
 

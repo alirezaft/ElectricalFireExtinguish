@@ -39,4 +39,10 @@ public class Part : Interactable
             highlighter.enabled = true;
         }
     }
+
+    public override void FinishWorking()
+    {
+        highlighter.enabled = false;
+        scenarioManager.FinalizeStep();
+    }
 }

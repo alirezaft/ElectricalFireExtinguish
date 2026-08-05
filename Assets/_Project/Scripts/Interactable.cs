@@ -21,5 +21,7 @@ namespace Tools
         {
             interactionPrompt.DisableInteractionUI();
         }
+
+        public abstract void FinishWorking();
     }
 }

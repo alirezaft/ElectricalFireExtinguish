@@ -13,8 +13,8 @@ namespace Tools
             Debug.Log("Using tool");
             transform.parent = null;
             MoveToPartInteractionPoint(part.InteractionPoint.position);
+            interactableAnimator.PlayAnimation();
             //TODO: Go in working rotation
-            //TODO: Run animation
             //TODO: Notify when work is done
         }
 
@@ -22,6 +22,12 @@ namespace Tools
         {
             transform.MoveChildTo(operationPoint, partPosition);
         }
-        
+
+        public override void FinishWorking()
+        {
+            scenarioManager.PlayerEquipper.PutInHand(this);
+            scenarioManager.PlayPartAnimation();
+            
+        }
     }
 }

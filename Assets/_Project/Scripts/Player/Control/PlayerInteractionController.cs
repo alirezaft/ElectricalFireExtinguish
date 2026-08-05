@@ -99,11 +99,7 @@ namespace Player.Control
             if (previousLookedInteractable is null || previousLookedInteractable is not Tool tool)
                 return;
             
-            previousLookedInteractable.transform.MoveChildTo(tool.HoldingPoint, handPosition.position);
-            previousLookedInteractable.transform.rotation = Quaternion.Euler(tool.HoldingRotation);
-            previousLookedInteractable.transform.parent = handPosition;
-            
-            equipper.EquipTool(tool);
+            equipper.EquipTool(tool, handPosition);
         }
         
         
@@ -112,9 +108,12 @@ namespace Player.Control
             if (equipper.CurrentTool is null || previousLookedInteractable is not Part part)
                 return;
 
+            if (!scenarioManager.CanUseTool(equipper.CurrentTool, part))
+                return;
+                
             var tool = equipper.CurrentTool;
 
-            // tool.transform.parent = null;
+            
             tool.Use(part);
         }
 
