@@ -12,9 +12,11 @@ namespace GameManager
         private Step currentStep;
 
         [SerializeField] private GameObject player;
+
+        [SerializeField] private Equipper playerEquipper;
         
         [SerializeField] private Tool[] tools;
-        [SerializeField] private GameObject[] parts;
+        [SerializeField] private Part[] parts;
 
         public event Action<Step> OnStepChange;
 
@@ -22,6 +24,16 @@ namespace GameManager
         {
             currentStep = firstStep;
             UpdateGame();
+        }
+
+        private void OnEnable()
+        {
+            player.GetComponent<Equipper>().OnToolEquipped += OnPlayerToolEquipped;
+        }
+
+        private void OnDisable()
+        {
+            player.GetComponent<Equipper>().OnToolEquipped -= OnPlayerToolEquipped;
         }
 
         public void GoToNextStep()
@@ -42,9 +54,19 @@ namespace GameManager
             requiredTool.GetComponent<Highlighter>().enabled = true;
         }
 
-        public bool IsCurrentInteraction(Tool tool)
+        public bool IsCurrentInteraction(Interactable tool)
         {
-            return tool.ToolType == currentStep.RequiredTool;
+            // return tool.ToolType == currentStep.RequiredTool && player.GetComponent<Equipper>().CurrentTool == null;
+            return true;
+        }
+
+        private void OnPlayerToolEquipped(Tool tool)
+        {
+            playerEquipper.CurrentTool.GetComponent<Highlighter>().enabled = false;
+            
+            
+            var currentPart = parts.FirstOrDefault(part => part.PartType == currentStep.TargetObject);
+            
         }
     }
 }

@@ -10,10 +10,6 @@ namespace UI
 
         private void OnEnable()
         {
-            Debug.Log(transform.parent.position);
-            Debug.Log(transform.parent.up);
-            Debug.Log(transform.position);
-            
             transform.position = transform.parent.position + (Vector3.up * distanceFromObject);
         }
 

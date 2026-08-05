@@ -6,14 +6,19 @@ public class InteractionManager : MonoBehaviour
 {
     [SerializeField] private ScenarioManager scenarioManager;
 
-    public void AttemptInteraction(Tool tool)
+    public bool AttemptInteraction(Interactable interactable)
     {
-        if(scenarioManager.IsCurrentInteraction(tool))
-            tool.GetComponent<InteractionPrompt>().EnableInteractionUI();
+        if(scenarioManager.IsCurrentInteraction(interactable))
+        {
+            interactable.Focus();
+            return true;
+        }
+
+        return false;
     }
 
-    public void CancelInteractionAttempt(Tool tool)
+    public void CancelInteractionAttempt(Interactable interactable)
     {
-        tool.GetComponent<InteractionPrompt>().DisableInteractionUI();
+        interactable.Unfocus();
     }
 }

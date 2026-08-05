@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GameManager;
 using Tools;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace Player.Control
@@ -12,25 +13,34 @@ namespace Player.Control
         [Header("References")] [SerializeField]
         private Camera playerCamera;
 
+        [SerializeField] private Equipper equipper;
         [SerializeField] private ScenarioManager scenarioManager;
         [SerializeField] private InteractionManager interactionManager;
 
         [Header("Interaction")] [SerializeField]
         private float interactionDistance = 3f;
 
+        [SerializeField] private Transform handPosition;
         [SerializeField] private float sphereRadius = 0.25f;
-        [SerializeField] private string toolTag = "Tool";
-
-        public GameObject CurrentTarget { get; private set; }
+        
 
         private Tool previousLookedTool;
 
         private void Update()
         {
             var lookedTool = FindLookedAtTool();
-            ChangeToolFocus(lookedTool);
+            ChangeFocus(lookedTool);
+        }
 
-            CurrentTarget = null;
+        private void OnEnable()
+        {
+            InputSystem.actions.FindAction("Interact").performed += OnInteractPressed;
+            Debug.Log("Subscribed successfully");
+        }
+
+        private void OnDisable()
+        {
+            InputSystem.actions.FindAction("Interact").performed -= OnInteractPressed;
         }
 
         private Tool FindLookedAtTool()
@@ -49,19 +59,25 @@ namespace Player.Control
             return null;
         }
 
-        private void ChangeToolFocus(Tool lookedTool)
+        private void ChangeFocus(Tool lookedTool)
         {
             if (lookedTool == previousLookedTool)
                 return;
 
-            bool isInteractionAvailable;
             if (previousLookedTool != null)
                 OnLookExit(previousLookedTool);
 
             previousLookedTool = lookedTool;
 
-            if (previousLookedTool != null && scenarioManager.IsCurrentInteraction(previousLookedTool))
+            if (previousLookedTool == null)
+                return;
+            
+            var isToolRequired = scenarioManager.IsCurrentInteraction(previousLookedTool);
+
+            if (previousLookedTool != null && isToolRequired)
                 OnLookEnter(previousLookedTool);
+            else if (previousLookedTool != null && !isToolRequired)
+                previousLookedTool = null;
         }
 
         private void OnLookExit(Tool tool)
@@ -73,10 +89,23 @@ namespace Player.Control
         {
             return interactionManager.AttemptInteraction(tool);
         }
+        
 
-        private void EquipTool(GameObject tool)
+        private void OnInteractPressed(InputAction.CallbackContext ctx)
         {
-            Debug.Log($"Equipped {tool.name}");
+            if (previousLookedTool is null)
+                return;
+            
+            previousLookedTool.transform.MoveChildTo(previousLookedTool.HoldingPoint, handPosition.position);
+            previousLookedTool.transform.rotation = Quaternion.Euler(previousLookedTool.HoldingRotation);
+            previousLookedTool.transform.parent = handPosition;
+            
+            equipper.EquipTool(previousLookedTool);
+        }
+        
+        private void EquipTool(Tool tool)
+        {
+            
         }
 
 #if UNITY_EDITOR
