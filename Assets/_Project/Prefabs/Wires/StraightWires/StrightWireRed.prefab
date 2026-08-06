@@ -13,6 +13,14 @@ PrefabInstance:
       value: StrightWireRed
       objectReference: {fileID: 0}
     - target: {fileID: 6141142749082829342, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141142749082829342, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141142749082829342, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}

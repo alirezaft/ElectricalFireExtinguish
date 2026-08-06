@@ -99,7 +99,7 @@ namespace Player.Control
             if (previousLookedInteractable is null || previousLookedInteractable is not Tool tool)
                 return;
             
-            equipper.EquipTool(tool, handPosition);
+            equipper.EquipTool(tool);
         }
         
         

@@ -10,7 +10,7 @@ namespace Tools
         
         public override void Use(Part part)
         {
-            Debug.Log("Using tool");
+            Debug.Log($"Using tool{ToolType.name}");
             transform.parent = null;
             MoveToPartInteractionPoint(part.InteractionPoint.position);
             interactableAnimator.PlayAnimation();

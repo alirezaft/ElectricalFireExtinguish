@@ -11,13 +11,25 @@ public class Equipper : MonoBehaviour
     
     public event Action<Tool> OnToolEquipped;
 
-    public void EquipTool(Tool tool, Transform hand)
+    public void EquipTool(Tool tool)
     {
+        if (CurrentTool is not null)
+        {
+            DetachToolFromHand();
+            CurrentTool.transform.SwapTransformWith(tool.transform);
+        }
+        
         tool.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         PutInHand(tool);
         
         currentTool = tool;
         OnToolEquipped?.Invoke(tool);
+    }
+
+    private void DetachToolFromHand()
+    {
+        CurrentTool.transform.parent = null;
+        CurrentTool.gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
     public void PutInHand(Tool tool)

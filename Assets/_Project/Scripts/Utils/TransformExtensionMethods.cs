@@ -18,4 +18,16 @@ public static class TransformExtensionMethods
 
         parent.position += targetPosition - child.position;
     }
+
+    public static void SwapTransformWith(this Transform transform,Transform targetTransform)
+    {
+        var tmpPosition = targetTransform.position;
+        var tmpRotation = targetTransform.rotation;
+
+        targetTransform.position = transform.position;
+        targetTransform.rotation = transform.rotation;
+
+        transform.rotation = tmpRotation;
+        transform.position = tmpPosition;
+    }
 }
