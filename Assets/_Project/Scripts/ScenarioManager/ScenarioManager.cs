@@ -14,6 +14,7 @@ namespace GameManager
         [SerializeField] private GameObject player;
 
         [SerializeField] private Equipper playerEquipper;
+        [SerializeField] private CutsceneManager cutsceneManager;
         public Equipper PlayerEquipper => playerEquipper;
 
         [SerializeField] private Tool[] tools;
@@ -40,15 +41,18 @@ namespace GameManager
         public void GoToNextStep()
         {
             currentStep = currentStep.NextStep;
-            OnStepChange?.Invoke(currentStep);
+            // OnStepChange?.Invoke(currentStep);
             UpdateGame();
         }
 
         private void UpdateGame()
         {
             OnStepChange?.Invoke(currentStep);
-            
-            
+
+            if (currentStep is CutsceneStep step)
+            {
+                cutsceneManager.PlayCutscene(step.Cutscene);
+            }
         }
 
         public bool IsCurrentInteraction(Interactable interactable)
