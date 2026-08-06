@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8b87cd7eb6a5ef4587e328f4789e009, type: 3}
-  m_Name: StepThree
+  m_Name: Step03
   m_EditorClassIdentifier: 
-  nextStep: {fileID: 0}
+  nextStep: {fileID: 11400000, guid: 4cf8bb5bd27ed5f4ebe971ef09f8d6ec, type: 2}
   objectiveText: "\u0627\u0646\u0628\u0631\u062F\u0633\u062A \u0631\u0627 \u0627\u0632
     \u0631\u0648\u06CC \u0645\u06CC\u0632 \u0628\u0631\u062F\u0627\u0631\u06CC\u062F"
   requiredTool: {fileID: 11400000, guid: b0c0a375a96c9964d933fa619d75d27d, type: 2}
