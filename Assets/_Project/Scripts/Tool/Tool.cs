@@ -10,14 +10,14 @@ namespace Tools
         [SerializeField] private ToolType toolType;
         public ToolType ToolType => toolType;
 
-        [SerializeField] protected InteractableAnimator interactableAnimator;
-
         [SerializeField] protected Transform holdingPoint;
         public Transform HoldingPoint => holdingPoint;
         
         [SerializeField] protected Vector3 holdingRotation;
         public Vector3 HoldingRotation => holdingRotation;
-        
+
+        public event Action<Tool> OnEquip;
+        public event Action<Tool> OnUnequip;
         
         public abstract void Use(Part targetPart);
 
@@ -62,6 +62,16 @@ namespace Tools
         public void EnableInteraction()
         {
             interactionPrompt.EnableInteractionUI();
+        }
+
+        public void FireOnEquip()
+        {
+            OnEquip?.Invoke(this);
+        }
+
+        public void FireOnUnequip()
+        {
+            OnUnequip?.Invoke(this);
         }
     }
 }

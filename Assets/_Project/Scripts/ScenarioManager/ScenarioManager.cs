@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Tools;
 using UnityEngine;
+using Material = Tools.Material;
 
 namespace GameManager
 {
@@ -84,7 +85,7 @@ namespace GameManager
             var step = currentStep as PartInteractionStep;
             var targetPart = parts.FirstOrDefault(part => part.PartType == step.TragetPart);
 
-            if(step.RequiredTool == NoToolType){
+            if(step.RequiredTool == NoToolType || PlayerEquipper.CurrentTool is Material){
                 targetPart.WorkWithoutTool();
                 return;
             }

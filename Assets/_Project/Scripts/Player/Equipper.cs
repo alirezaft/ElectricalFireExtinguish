@@ -16,6 +16,7 @@ public class Equipper : MonoBehaviour
     {
         if (CurrentTool is not null)
         {
+            CurrentTool.FireOnUnequip();
             DetachToolFromHand();
             CurrentTool.transform.SwapTransformWith(tool.transform);
         }
@@ -25,6 +26,8 @@ public class Equipper : MonoBehaviour
         
         currentTool = tool;
         OnToolEquipped?.Invoke(tool);
+        Debug.Log("Working wire");
+        tool.FireOnEquip();
     }
 
     private void DetachToolFromHand()
@@ -48,5 +51,11 @@ public class Equipper : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(handPosition.position, 0.1f);
+    }
+
+    public void UnequipTool()
+    {
+        DetachToolFromHand();
+        currentTool = null;
     }
 }

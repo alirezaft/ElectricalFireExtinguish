@@ -4,7 +4,6 @@ public class WireReplacer : MonoBehaviour
 {
     [SerializeField] private GameObject newWire;
     [SerializeField] private Transform newWirePoint;
-    [SerializeField] private Part wireInteractable;
 
     private void ReplaceWire()
     {
