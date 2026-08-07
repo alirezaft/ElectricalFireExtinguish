@@ -2,7 +2,7 @@ using Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class InteractableAnimator : MonoBehaviour
+public class InteractableAnimator : MonoBehaviour, IInteractableBehaiour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private string interactionTriggerName;
@@ -10,7 +10,7 @@ public class InteractableAnimator : MonoBehaviour
 
     private bool isPlayingAnimation;
     
-    public void PlayAnimation()
+    public void ExecuteBehaviour()
     {
         if(!isPlayingAnimation)
         {
@@ -19,7 +19,7 @@ public class InteractableAnimator : MonoBehaviour
         }
     }
 
-    public void OnAnimationFinished()
+    public void FinishBehaviour()
     {
         isPlayingAnimation = false;
         interactable.FinishWorking();

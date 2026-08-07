@@ -10,8 +10,14 @@ namespace Tools
         [SerializeField] protected InteractionPrompt interactionPrompt;
         [SerializeField] protected ScenarioManager scenarioManager;
         [SerializeField] protected Highlighter highlighter;
+        [SerializeField] protected IInteractableBehaiour[] interactableBehaiours;
 
-        
+
+        private void Awake()
+        {
+            interactableBehaiours = GetComponents<IInteractableBehaiour>();
+        }
+
         public virtual void Focus()
         {
             interactionPrompt.EnableInteractionUI();
@@ -20,6 +26,14 @@ namespace Tools
         public virtual void Unfocus()
         {
             interactionPrompt.DisableInteractionUI();
+        }
+
+        public void ExecuteBehaviours()
+        {
+            foreach (var behaviour in interactableBehaiours)
+            {
+                behaviour.ExecuteBehaviour();
+            }
         }
 
         public abstract void FinishWorking();

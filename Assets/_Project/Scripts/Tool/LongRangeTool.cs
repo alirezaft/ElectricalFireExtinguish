@@ -3,9 +3,16 @@ using UnityEngine;
 
 namespace Tools
 {
-    public abstract class LongRangeTool : Tool
+    public class LongRangeTool : Tool
     {
-        [SerializeField] private Transform shootingOrigin;
-        public Transform ShootingOrigin => shootingOrigin;
+        public override void FinishWorking()
+        {
+            scenarioManager.FinalizeStep();
+        }
+
+        public override void Use(Part targetPart)
+        {
+            ExecuteBehaviours();
+        }
     }
 }

@@ -10,10 +10,9 @@ namespace Tools
         
         public override void Use(Part part)
         {
-            Debug.Log($"Using tool{ToolType.name}");
             transform.parent = null;
             MoveToPartInteractionPoint(part.InteractionPoint.position);
-            interactableAnimator.PlayAnimation();
+            ExecuteBehaviours();
             //TODO: Go in working rotation
             //TODO: Notify when work is done
         }
@@ -26,7 +25,7 @@ namespace Tools
         public override void FinishWorking()
         {
             scenarioManager.PlayerEquipper.PutInHand(this);
-            scenarioManager.PlayPartAnimation();
+            scenarioManager.ExecutePartBehaviours();
             
         }
     }

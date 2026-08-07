@@ -76,12 +76,12 @@ namespace GameManager
                 GoToNextStep();
         }
 
-        public void PlayPartAnimation()
+        public void ExecutePartBehaviours()
         {
             var step = currentStep as PartInteractionStep;
             var targetPart = parts.FirstOrDefault(part => part.PartType == step.TragetPart);
 
-            targetPart.GetComponent<InteractableAnimator>().PlayAnimation();
+            targetPart.ExecuteBehaviours();
         }
 
         public void FinalizeStep()

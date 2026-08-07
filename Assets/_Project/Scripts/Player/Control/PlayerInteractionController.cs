@@ -56,7 +56,7 @@ namespace Player.Control
             {
                 if (hit.collider.TryGetComponent(out Interactable interactable))
                     Debug.Log(interactable.gameObject.name);
-                    return interactable;
+                return interactable;
             }
 
             return null;
