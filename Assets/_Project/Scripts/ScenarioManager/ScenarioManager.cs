@@ -2,13 +2,14 @@ using System;
 using System.Linq;
 using Tools;
 using UnityEngine;
-using VisualEffects;
 
 namespace GameManager
 {
     public class ScenarioManager : MonoBehaviour
     {
         [SerializeField] private Step firstStep;
+        [SerializeField] private ToolType noToolType;
+        public ToolType NoToolType => noToolType;
         private Step currentStep;
 
         [SerializeField] private GameObject player;
@@ -81,12 +82,23 @@ namespace GameManager
             var step = currentStep as PartInteractionStep;
             var targetPart = parts.FirstOrDefault(part => part.PartType == step.TragetPart);
 
-            targetPart.ExecuteBehaviours();
+            if(step.RequiredTool == NoToolType){
+                targetPart.WorkWithoutTool();
+                return;
+            }
+            targetPart.FinishWorking();
         }
 
         public void FinalizeStep()
         {
             GoToNextStep();
+        }
+
+        public bool DoesStepRequireTool()
+        {
+            if (currentStep is not PartInteractionStep step) return false;
+
+            return step.RequiredTool != NoToolType;
         }
     }
 }

@@ -26,7 +26,6 @@ namespace Tools
         {
             scenarioManager.PlayerEquipper.PutInHand(this);
             scenarioManager.ExecutePartBehaviours();
-            
         }
     }
 }

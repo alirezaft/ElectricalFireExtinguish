@@ -15,12 +15,10 @@ namespace GameManager
 
         public override bool CanInteract(Interactable interactable, ScenarioManager manager)
         {
-            if (interactable is not Part) return false;
+            if (interactable is not Part part) return false;
 
-            var part = interactable as Part;
-            
             if (part.PartType != targetPart) return false;
-            if (requiredTool != manager.PlayerEquipper.CurrentTool.ToolType) return false;
+            if (requiredTool != manager.NoToolType && requiredTool != manager.PlayerEquipper.CurrentTool.ToolType) return false;
 
             return true;
         }

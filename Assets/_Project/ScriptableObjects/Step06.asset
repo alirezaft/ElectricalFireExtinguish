@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306d877213e74284689e3b288f4a2305, type: 3}
   m_Name: Step06
   m_EditorClassIdentifier: 
-  nextStep: {fileID: 0}
+  nextStep: {fileID: 11400000, guid: 4d7388bbd973c454d8f5ffdce66daa6c, type: 2}
   objectiveText: 
   cutscene: {fileID: 11400000, guid: 46cb42889f7fbf24f877c680b6152429, type: 2}
-  Cutscene: {fileID: 0}

@@ -12,7 +12,7 @@ public class WireReplacer : MonoBehaviour
         wire.transform.parent = transform.parent;
         wire.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 7);
         
-        wireInteractable.FinishWorking();
+        // wireInteractable.FinishWorking();
         
         Destroy(gameObject);
     } 

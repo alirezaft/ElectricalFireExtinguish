@@ -40,9 +40,17 @@ public class Part : Interactable
         }
     }
 
+    public void WorkWithoutTool()
+    {
+        highlighter.enabled = false;
+        ExecuteBehaviours();
+        scenarioManager.FinalizeStep();
+    }
+
     public override void FinishWorking()
     {
         highlighter.enabled = false;
+        ExecuteBehaviours();
         scenarioManager.FinalizeStep();
     }
 }

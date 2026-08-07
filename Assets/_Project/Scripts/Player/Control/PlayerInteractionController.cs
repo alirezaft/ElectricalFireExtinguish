@@ -36,13 +36,13 @@ namespace Player.Control
         {
             InputSystem.actions.FindAction("Interact").performed += OnInteractPressed;
             InputSystem.actions.FindAction("Attack").performed += OnUseToolPressed;
-            Debug.Log("Subscribed successfully");
         }
 
 
         private void OnDisable()
         {
             InputSystem.actions.FindAction("Interact").performed -= OnInteractPressed;
+            InputSystem.actions.FindAction("Attack").performed -= OnUseToolPressed;
         }
 
         private Interactable FindLookedAtInteractable()
@@ -56,6 +56,7 @@ namespace Player.Control
             {
                 if (hit.collider.TryGetComponent(out Interactable interactable))
                     Debug.Log(interactable.gameObject.name);
+                Debug.Log(interactable);
                 return interactable;
             }
 
@@ -105,6 +106,15 @@ namespace Player.Control
         
         private void OnUseToolPressed(InputAction.CallbackContext obj)
         {
+            if (!scenarioManager.DoesStepRequireTool())
+            {
+                if (previousLookedInteractable is Part currentPart && scenarioManager.IsCurrentInteraction(currentPart))
+                {
+                    scenarioManager.ExecutePartBehaviours();
+                    return;
+                }
+            }
+
             if (equipper.CurrentTool is null || previousLookedInteractable is not Part part)
                 return;
 
