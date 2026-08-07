@@ -43,5 +43,6 @@ namespace Player.Control
 
             characterController.Move(velocity * Time.deltaTime);
         }
+        
     }
 }

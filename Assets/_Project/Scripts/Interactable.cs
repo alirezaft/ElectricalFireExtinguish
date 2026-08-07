@@ -10,12 +10,12 @@ namespace Tools
         [SerializeField] protected InteractionPrompt interactionPrompt;
         [SerializeField] protected ScenarioManager scenarioManager;
         [SerializeField] protected Highlighter highlighter;
-        [SerializeField] protected IInteractableBehaiour[] interactableBehaiours;
+        [SerializeField] protected IInteractableBehaviour[] interactableBehaiours;
 
 
         private void Awake()
         {
-            interactableBehaiours = GetComponents<IInteractableBehaiour>();
+            interactableBehaiours = GetComponents<IInteractableBehaviour>();
         }
 
         public virtual void Focus()

@@ -10,7 +10,6 @@ public class ObjectiveText : MonoBehaviour
     
     private void OnEnable()
     {
-        Debug.Log("Subscribing to manager");
         scenarioManager.OnStepChange += UpdateObjectiveText;
     }
 

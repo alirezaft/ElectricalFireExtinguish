@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b87cd7eb6a5ef4587e328f4789e009, type: 3}
+  m_Name: Step08
+  m_EditorClassIdentifier: 
+  nextStep: {fileID: 11400000, guid: 339c8c74afe8e794db74bd9d836bc1b3, type: 2}
+  objectiveText: "\u06A9\u067E\u0633\u0648\u0644 \u0622\u062A\u0634 \u0646\u0634\u0627\u0646\u06CC
+    \u0631\u0627 \u0628\u0631\u062F\u0627\u0631\u06CC\u062F"
+  requiredTool: {fileID: 11400000, guid: 4ddef6e679bcb094aa4118a52260d3d6, type: 2}

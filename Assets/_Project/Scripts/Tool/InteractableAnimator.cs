@@ -2,7 +2,7 @@ using Tools;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class InteractableAnimator : MonoBehaviour, IInteractableBehaiour
+public class InteractableAnimator : MonoBehaviour, IInteractableBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private string interactionTriggerName;

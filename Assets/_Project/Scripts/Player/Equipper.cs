@@ -1,5 +1,6 @@
 using System;
 using Tools;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Equipper : MonoBehaviour
@@ -34,8 +35,18 @@ public class Equipper : MonoBehaviour
 
     public void PutInHand(Tool tool)
     {
+        tool.transform.SetParent(handPosition, false);
         tool.transform.MoveChildTo(tool.HoldingPoint, handPosition.position);
         tool.transform.rotation = Quaternion.Euler(tool.HoldingRotation);
-        tool.transform.parent = handPosition;
+        
+        // tool.transform.SetParent(handPosition);
+        //
+        // tool.transform.localPosition = -tool.HoldingPoint.localPosition;
+        // tool.transform.localRotation = Quaternion.Inverse(tool.transform.localRotation);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(handPosition.position, 0.1f);
     }
 }

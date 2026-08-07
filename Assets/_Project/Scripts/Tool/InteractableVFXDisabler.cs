@@ -1,0 +1,27 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.VFX;
+
+public class InteractableVFXDisabler : MonoBehaviour, IInteractableBehaviour
+{
+    [SerializeField] private VisualEffect[] effects;
+    public void ExecuteBehaviour()
+    {
+        foreach (var effect in effects)
+        {
+            effect.Stop();
+        }
+
+        StartCoroutine(DisableVFXObjects());
+    }
+
+    private IEnumerator DisableVFXObjects()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        foreach (var effect in effects)
+        {
+            effect.gameObject.SetActive(false);
+        }
+    }
+}

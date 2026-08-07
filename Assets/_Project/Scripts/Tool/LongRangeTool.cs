@@ -7,12 +7,14 @@ namespace Tools
     {
         public override void FinishWorking()
         {
-            scenarioManager.FinalizeStep();
+            scenarioManager.ExecutePartBehaviours();
         }
 
         public override void Use(Part targetPart)
         {
             ExecuteBehaviours();
         }
+        
+        
     }
 }

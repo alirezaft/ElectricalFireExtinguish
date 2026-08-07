@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InteractableParticle : MonoBehaviour, IInteractableBehaiour
+public class InteractableParticle : MonoBehaviour, IInteractableBehaviour
 {
     [SerializeField] private ParticleSystem particles;
 
