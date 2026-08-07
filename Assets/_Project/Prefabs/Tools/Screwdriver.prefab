@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: holdingRotation.z
       value: 345.68048
       objectReference: {fileID: 0}
+    - target: {fileID: 2152826458684225900, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7f7ba0465e95ca34386aa8d7f192c18d, type: 2}
     - target: {fileID: 2203256509255401193, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: renderers.Array.size
       value: 1
@@ -121,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 6291175972611980992}
     - target: {fileID: 4934209964718187475, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13
+      value: -0.1287
       objectReference: {fileID: 0}
     - target: {fileID: 5484651335063235840, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_Height

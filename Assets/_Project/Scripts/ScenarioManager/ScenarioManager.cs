@@ -21,7 +21,8 @@ namespace GameManager
         [SerializeField] private Tool[] tools;
         [SerializeField] private Part[] parts;
 
-        public event Action<Step> OnStepChange;
+        private int currentStepIndex = 1;
+        public event Action<Step, int> OnStepChange;
 
         private void Start()
         {
@@ -42,13 +43,14 @@ namespace GameManager
         public void GoToNextStep()
         {
             currentStep = currentStep.NextStep;
+            currentStepIndex++;
             // OnStepChange?.Invoke(currentStep);
             UpdateGame();
         }
 
         private void UpdateGame()
         {
-            OnStepChange?.Invoke(currentStep);
+            OnStepChange?.Invoke(currentStep, currentStepIndex);
 
             if (currentStep is CutsceneStep step)
             {

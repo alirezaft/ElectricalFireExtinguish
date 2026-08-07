@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a247e99ba4f19418e2a8534fb44332, type: 3}
+  m_Name: Step13
+  m_EditorClassIdentifier: 
+  nextStep: {fileID: 11400000, guid: 5b66423ad3bd6c04ba249f046af4391c, type: 2}
+  objectiveText: "\u0628\u0627 \u0627\u0633\u062A\u0641\u0627\u062F\u0647 \u0627\u0632
+    \u067E\u06CC\u0686 \u06AF\u0648\u0634\u062A\u06CC \u067E\u06CC\u0686 \u062C\u0639\u0628\u0647
+    \u0633\u06CC\u0645\u0647\u0627 \u0631\u0627 \u0628\u0627\u0632 \u06A9\u0646\u06CC\u062F"
+  requiredTool: {fileID: 11400000, guid: 51ee3da6592b4b040926ab9477028774, type: 2}
+  targetPart: {fileID: 11400000, guid: fda8488e80dae994782ec5e724c14bd7, type: 2}

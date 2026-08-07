@@ -21,7 +21,7 @@ public class InteractableAnimator : MonoBehaviour, IInteractableBehaviour
 
     public void FinishBehaviour()
     {
-        isPlayingAnimation = false;
         interactable.FinishWorking();
+        isPlayingAnimation = false;
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using GameManager;
 using Parts;
 using Tools;
@@ -22,7 +23,7 @@ public class Part : Interactable
         scenarioManager.OnStepChange -= EnableHighlight;
     }
 
-    private void EnableHighlight(Step step)
+    private void EnableHighlight(Step step, int stepIndex)
     {
         if (step is not PartInteractionStep)
         {
@@ -52,5 +53,7 @@ public class Part : Interactable
         highlighter.enabled = false;
         ExecuteBehaviours();
         scenarioManager.FinalizeStep();
+
+        interactableBehaiours.FirstOrDefault(behaviour => behaviour is DestroyInteractableBehaviour)?.ExecuteBehaviour();   
     }
 }

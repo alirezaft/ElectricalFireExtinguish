@@ -32,6 +32,9 @@ namespace Tools
         {
             foreach (var behaviour in interactableBehaiours)
             {
+                if (behaviour is DestroyInteractableBehaviour)
+                    continue;
+                
                 behaviour.ExecuteBehaviour();
             }
         }

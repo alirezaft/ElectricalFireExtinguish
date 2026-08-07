@@ -18,7 +18,7 @@ public class ObjectiveText : MonoBehaviour
         scenarioManager.OnStepChange -= UpdateObjectiveText;
     }
 
-    private void UpdateObjectiveText(Step step)
+    private void UpdateObjectiveText(Step step, int stepIndex)
     {
         objectiveText.text = step.ObjectiveText;
     }

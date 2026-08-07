@@ -36,7 +36,7 @@ namespace Tools
             scenarioManager.OnStepChange -= EnableHighlight;
         }
 
-        private void EnableHighlight(Step step)
+        private void EnableHighlight(Step step, int stepIndex)
         {
             if (step is not EquipToolStep)
             {
