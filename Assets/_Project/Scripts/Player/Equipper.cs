@@ -40,7 +40,7 @@ public class Equipper : MonoBehaviour
     {
         tool.transform.SetParent(handPosition, false);
         tool.transform.MoveChildTo(tool.HoldingPoint, handPosition.position);
-        tool.transform.rotation = Quaternion.Euler(tool.HoldingRotation);
+        tool.transform.localRotation = Quaternion.Euler(tool.HoldingRotation);
         
         // tool.transform.SetParent(handPosition);
         //
