@@ -16,6 +16,12 @@ namespace Tools
         [SerializeField] protected Vector3 holdingRotation;
         public Vector3 HoldingRotation => holdingRotation;
 
+        [SerializeField] private Transform restingPlace;
+        public Transform RestingPlace => restingPlace;
+
+        [SerializeField] public Vector3 restingRotation;
+        public Vector3 RestingRotation => restingRotation;
+
         public event Action<Tool> OnEquip;
         public event Action<Tool> OnUnequip;
         

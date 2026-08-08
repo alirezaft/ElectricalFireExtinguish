@@ -17,8 +17,8 @@ public class Equipper : MonoBehaviour
         if (CurrentTool is not null)
         {
             CurrentTool.FireOnUnequip();
-            DetachToolFromHand();
-            CurrentTool.transform.SwapTransformWith(tool.transform);
+            DetachCurrentToolFromHand();
+            PutCurrentToolDown();
         }
         
         tool.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
@@ -26,26 +26,26 @@ public class Equipper : MonoBehaviour
         
         currentTool = tool;
         OnToolEquipped?.Invoke(tool);
-        Debug.Log("Working wire");
         tool.FireOnEquip();
     }
 
-    private void DetachToolFromHand()
+    private void DetachCurrentToolFromHand()
     {
         CurrentTool.transform.parent = null;
         CurrentTool.gameObject.layer = LayerMask.NameToLayer("Default");
     }
+
+    private void PutCurrentToolDown()
+    {
+        CurrentTool.transform.position = CurrentTool.RestingPlace.position;
+        CurrentTool.transform.rotation = Quaternion.Euler(CurrentTool.RestingRotation);
+    } 
 
     public void PutInHand(Tool tool)
     {
         tool.transform.SetParent(handPosition, false);
         tool.transform.MoveChildTo(tool.HoldingPoint, handPosition.position);
         tool.transform.localRotation = Quaternion.Euler(tool.HoldingRotation);
-        
-        // tool.transform.SetParent(handPosition);
-        //
-        // tool.transform.localPosition = -tool.HoldingPoint.localPosition;
-        // tool.transform.localRotation = Quaternion.Inverse(tool.transform.localRotation);
     }
 
     private void OnDrawGizmos()
@@ -55,7 +55,7 @@ public class Equipper : MonoBehaviour
 
     public void UnequipTool()
     {
-        DetachToolFromHand();
+        DetachCurrentToolFromHand();
         currentTool = null;
     }
 }
