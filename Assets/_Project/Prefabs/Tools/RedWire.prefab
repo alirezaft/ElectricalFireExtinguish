@@ -59,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 3, z: 17.1585}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5971242098374368764}
@@ -125,6 +125,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2175911116945616529, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0723
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175911116945616529, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0117
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175911116945616529, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1572
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175911116945616529, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175911116945616529, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175911116945616529, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 3050163038093173997, guid: 9d91394a15db2054eb8846736e409184, type: 3}
       propertyPath: m_Controller
       value: 
@@ -132,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 5023934310222508849, guid: 9d91394a15db2054eb8846736e409184, type: 3}
       propertyPath: m_Name
       value: RedWire
+      objectReference: {fileID: 0}
+    - target: {fileID: 5181709420785614161, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6722271342709640346, guid: 9d91394a15db2054eb8846736e409184, type: 3}
       propertyPath: toolType
@@ -237,6 +265,6 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.0069287084
-  m_Height: 0.06392292
+  m_Height: 0.34877998
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.03009541}
+  m_Center: {x: 0, y: 0, z: 0.17252395}

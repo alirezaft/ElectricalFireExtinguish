@@ -150,6 +150,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BurntWireRed
       objectReference: {fileID: 0}
+    - target: {fileID: 3564575472828487484, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685723921707833692, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6766872161554794341, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
       propertyPath: renderers.Array.size
       value: 1
@@ -158,6 +166,42 @@ PrefabInstance:
       propertyPath: 'renderers.Array.data[0]'
       value: 
       objectReference: {fileID: 550649624149495100}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0528
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0458
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

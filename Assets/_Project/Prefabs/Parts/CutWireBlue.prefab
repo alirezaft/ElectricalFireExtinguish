@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CutWireBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 3685723921707833692, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6766872161554794341, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
       propertyPath: renderers.Array.size
       value: 2
@@ -241,6 +245,42 @@ PrefabInstance:
       propertyPath: 'renderers.Array.data[1]'
       value: 
       objectReference: {fileID: 7871193185925128081}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0698
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0008
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -317,4 +357,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newWire: {fileID: 76013428282765395, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
   newWirePoint: {fileID: 2202996557340687223}
-  wireInteractable: {fileID: 5065064817508763766}

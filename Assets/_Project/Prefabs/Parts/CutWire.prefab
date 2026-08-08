@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CutWire
       objectReference: {fileID: 0}
+    - target: {fileID: 3685723921707833692, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6766872161554794341, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
       propertyPath: renderers.Array.size
       value: 2
@@ -174,6 +178,38 @@ PrefabInstance:
       propertyPath: 'renderers.Array.data[1]'
       value: 
       objectReference: {fileID: 3845497684153384296}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0773
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -250,7 +286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newWire: {fileID: 8333231412171698095, guid: 5fb4172bed44f8540ba547982b7b5189, type: 3}
   newWirePoint: {fileID: 7985807812329264844}
-  wireInteractable: {fileID: 4874278457504564038}
 --- !u!1001 &6534701445035214720
 PrefabInstance:
   m_ObjectHideFlags: 0

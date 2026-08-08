@@ -490,6 +490,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElectricalMeter
       objectReference: {fileID: 0}
+    - target: {fileID: 3685723921707833692, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7709336293211851420, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.139
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
