@@ -64,17 +64,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1505164122124467862}
   m_SourcePrefab: {fileID: 100100000, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
---- !u!114 &3158826806923308 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 446246396763510780, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
-  m_PrefabInstance: {fileID: 448770431392466896}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3985035677755232492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6574653f366b4c4696b1d9c3c3f6b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3985035677755232492 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3564575472828487484, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
@@ -96,7 +85,6 @@ MonoBehaviour:
   scenarioManager: {fileID: 0}
   highlighter: {fileID: 6616518153833595061}
   toolType: {fileID: 0}
-  interactableAnimator: {fileID: 3158826806923308}
   holdingPoint: {fileID: 8058005751620670388}
   holdingRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &4228491012857438372 stripped

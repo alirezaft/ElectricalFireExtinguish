@@ -1050,20 +1050,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.907
+      value: 3.207
       objectReference: {fileID: 0}
     - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1071,7 +1059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.408
+      value: -0.625
       objectReference: {fileID: 0}
     - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1101,14 +1089,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 2029401233194754703, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4378553548058982468, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
       propertyPath: m_Name
       value: Screwdriver
       objectReference: {fileID: 0}
+    - target: {fileID: 6596219740930631216, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
+      propertyPath: Screwdriver
+      value: 
+      objectReference: {fileID: 11400000, guid: 51ee3da6592b4b040926ab9477028774, type: 2}
     - target: {fileID: 6596219740930631216, guid: ae01ca75923b2104ea456c403d78a4c1, type: 3}
       propertyPath: scenarioManager
       value: 
@@ -1868,7 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b553d40a8669447aefa8008c5d1c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstStep: {fileID: 11400000, guid: a0c9211504ab9194997a67ae85dd90f3, type: 2}
+  firstStep: {fileID: 11400000, guid: 5af7929de6d49274d94577b48d99e7ab, type: 2}
   noToolType: {fileID: 11400000, guid: 7fd33f11423334c4fb89d1971570c8cd, type: 2}
   player: {fileID: 1902482695}
   playerEquipper: {fileID: 1902482696}
@@ -3809,7 +3797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439267179429646214, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.727
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 8007159064288742466, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: near clip plane

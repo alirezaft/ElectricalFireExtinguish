@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4365329959872653172}
   - component: {fileID: 6817086706737955040}
   - component: {fileID: 446246396763510780}
+  - component: {fileID: -790550344949842880}
   m_Layer: 0
   m_Name: Tool
   m_TagString: Tool
@@ -99,7 +100,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3564575472828487484}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -127,6 +128,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6817086706737955040}
   interactionTriggerName: Use
+  interactable: {fileID: 0}
+--- !u!114 &-790550344949842880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564575472828487484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7de21f260784324998df31caeeb88e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4434513040551626391
 GameObject:
   m_ObjectHideFlags: 0

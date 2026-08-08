@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartTool
       objectReference: {fileID: 0}
+    - target: {fileID: 6817086706737955040, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -114,17 +118,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7631793624505603172, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
   m_PrefabInstance: {fileID: 4862559936376748428}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4992850158257122928 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 446246396763510780, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
-  m_PrefabInstance: {fileID: 4862559936376748428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218122633926618800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6574653f366b4c4696b1d9c3c3f6b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5973739127148901499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1269369038225001975, guid: 742cf16bb51c55548a7a9feea366f642, type: 3}
@@ -151,7 +144,6 @@ MonoBehaviour:
   scenarioManager: {fileID: 0}
   highlighter: {fileID: 2203256509255401193}
   toolType: {fileID: 0}
-  interactableAnimator: {fileID: 4992850158257122928}
   holdingPoint: {fileID: 3067755785451171304}
   holdingRotation: {x: 0, y: 0, z: 0}
   operationPoint: {fileID: 4934209964718187475}

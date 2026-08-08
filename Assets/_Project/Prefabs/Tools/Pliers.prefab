@@ -223,11 +223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: holdingRotation.y
-      value: 6.984824
+      value: 255.04626
       objectReference: {fileID: 0}
     - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: holdingRotation.z
-      value: 333.0331
+      value: 333.03308
       objectReference: {fileID: 0}
     - target: {fileID: 2152826458684225900, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_Controller
