@@ -416,11 +416,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6141142749082829342, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
       propertyPath: m_LocalScale.z
-      value: 18.230675
+      value: 20.81
       objectReference: {fileID: 0}
     - target: {fileID: 6141142749082829342, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1954
+      value: -1.2013
       objectReference: {fileID: 0}
     - target: {fileID: 6141142749082829342, guid: 62c17eb9a216aca49a5e9240b5d92b54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3046,13 +3046,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1583447803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1a91d868071b743a5b52b462832a20, type: 3}
+  m_Script: {fileID: 11500000, guid: 7708d15b419dcd440a0659227e4d24ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newGameObject: {fileID: 9171192800177372061, guid: 6b31de6f9cd41b646bbba4e04087c53d, type: 3}
   spawnPoint: {fileID: 1583447804}
-  manager: {fileID: 0}
-  targetStepIndex: 0
+  targetStepIndex: 19
 --- !u!1 &1622305971
 GameObject:
   m_ObjectHideFlags: 0

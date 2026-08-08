@@ -10,15 +10,8 @@ public class GameObjectReplacer : MonoBehaviour
     
     public void Replace()
     {
-        var newPosition = newGameObject.transform.parent is null
-            ? spawnPoint.position
-            : spawnPoint.localPosition;
-        
-        var newInstance = Instantiate(newGameObject, newPosition, transform.rotation);
+        var newInstance = Instantiate(newGameObject, spawnPoint.position, transform.rotation);
         newInstance.transform.parent = transform.parent;
-        newInstance.transform.GetChild(0).transform.localScale = new Vector3(1, 1, 7);
-        
-        // wireInteractable.FinishWorking();
         
         Destroy(gameObject);
     }

@@ -31,6 +31,12 @@ namespace Player.Control
         private void Awake()
         {
             originalInteractionDistance = interactionDistance;
+            scenarioManager.OnScenarioFinish += DestorySelf;
+        }
+
+        private void DestorySelf()
+        {
+            Destroy(this);
         }
 
         private void Update()

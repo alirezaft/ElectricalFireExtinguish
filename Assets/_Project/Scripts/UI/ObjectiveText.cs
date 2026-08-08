@@ -11,11 +11,22 @@ public class ObjectiveText : MonoBehaviour
     private void OnEnable()
     {
         scenarioManager.OnStepChange += UpdateObjectiveText;
+        scenarioManager.OnScenarioFinish += DestroyGameObject;
+    }
+
+    private void DestroyGameObject()
+    {
+        scenarioManager.OnStepChange -= UpdateObjectiveText;
+        scenarioManager.OnScenarioFinish += DestroyGameObject;
+        
+        Destroy(gameObject);
     }
 
     private void OnDisable()
     {
         scenarioManager.OnStepChange -= UpdateObjectiveText;
+        scenarioManager.OnScenarioFinish += DestroyGameObject;
+
     }
 
     private void UpdateObjectiveText(Step step, int stepIndex)

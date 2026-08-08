@@ -22,6 +22,10 @@ namespace GameManager
 
         [SerializeField] private Equipper playerEquipper;
         [SerializeField] private CutsceneManager cutsceneManager;
+        
+        [SerializeField] private GameObject endUI;
+        [SerializeField] private EndUIText endUIText;
+        
         public Equipper PlayerEquipper => playerEquipper;
 
         [SerializeField] private List<Tool> tools;
@@ -29,6 +33,7 @@ namespace GameManager
 
         private int currentStepIndex = 1;
         public event Action<Step, int> OnStepChange;
+        public event Action OnScenarioFinish;
 
 
         public void Awake()
@@ -66,12 +71,35 @@ namespace GameManager
 
         private void UpdateGame()
         {
+            if(currentStep is not EndStep)
+                ApplyStep();
+            else
+            {
+                Debug.Log("FINISH!!");
+                FinishScenario();
+            }
+        }
+
+        private void ApplyStep()
+        {
             OnStepChange?.Invoke(currentStep, currentStepIndex);
 
             if (currentStep is CutsceneStep step)
             {
                 cutsceneManager.PlayCutscene(step.Cutscene);
             }
+        }
+
+        private void FinishScenario()
+        {
+            OnScenarioFinish?.Invoke();
+            ShowEndUI();
+        }
+
+        private void ShowEndUI()
+        {
+            endUI.SetActive(true);
+            endUIText.SetText(currentStep.ObjectiveText);
         }
 
         public bool IsCurrentInteraction(Interactable interactable)

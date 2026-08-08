@@ -1,15 +1,17 @@
+using System;
+using GameManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player.Control
 {
-    [RequireComponent(typeof(CharacterController))]
     public class PlayerMovementController : MonoBehaviour
     {
         [SerializeField] private float walkSpeed = 4f;
         [SerializeField] private float gravity = -20f;
 
         [SerializeField] private CharacterController characterController;
+        [SerializeField] private ScenarioManager manager; 
 
         private InputAction moveAction;
 
@@ -18,6 +20,22 @@ namespace Player.Control
         private void Awake()
         {
             moveAction = InputSystem.actions.FindAction("Move");
+            manager.OnScenarioFinish += DestroySelf;
+        }
+
+        private void OnDisable()
+        {
+            manager.OnScenarioFinish -= DestroySelf;
+        }
+
+        private void OnEnable()
+        {
+            manager.OnScenarioFinish += DestroySelf;
+        }
+
+        private void DestroySelf()
+        {
+            Destroy(this);
         }
 
         private void Update()
