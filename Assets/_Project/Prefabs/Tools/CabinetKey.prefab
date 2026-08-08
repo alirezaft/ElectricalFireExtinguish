@@ -13,6 +13,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 64db435ed1899da4ca2591fc0302d367, type: 2}
     - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: useAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 83cc3febc0293a24485ad67c82e8a9de, type: 3}
+    - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: holdingRotation.x
       value: 56.15275
       objectReference: {fileID: 0}

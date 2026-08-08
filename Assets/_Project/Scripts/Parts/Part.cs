@@ -46,6 +46,7 @@ public class Part : Interactable
         highlighter.enabled = false;
         ExecuteBehaviours();
         scenarioManager.FinalizeStep();
+        PlaySound();
     }
 
     public override void FinishWorking()
@@ -53,7 +54,7 @@ public class Part : Interactable
         highlighter.enabled = false;
         ExecuteBehaviours();
         scenarioManager.FinalizeStep();
-
-        interactableBehaiours.FirstOrDefault(behaviour => behaviour is DestroyInteractableBehaviour)?.ExecuteBehaviour();   
+        interactableBehaiours.FirstOrDefault(behaviour => behaviour is DestroyInteractableBehaviour)?.ExecuteBehaviour();
+        PlaySound();
     }
 }

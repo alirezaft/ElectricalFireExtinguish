@@ -7,6 +7,7 @@ public class Equipper : MonoBehaviour
 {
     [SerializeField] private ToolType noToolEnum;
     [SerializeField] private Transform handPosition;
+    [SerializeField] private AudioClip toolEquipSound;
     private Tool currentTool;
     public Tool CurrentTool => currentTool;
     
@@ -14,6 +15,7 @@ public class Equipper : MonoBehaviour
 
     public void EquipTool(Tool tool)
     {
+        AudioSource.PlayClipAtPoint(toolEquipSound, transform.position);
         if (CurrentTool is not null)
         {
             CurrentTool.FireOnUnequip();
@@ -25,6 +27,8 @@ public class Equipper : MonoBehaviour
         PutInHand(tool);
         
         currentTool = tool;
+        
+        
         OnToolEquipped?.Invoke(tool);
         tool.FireOnEquip();
     }

@@ -18,6 +18,7 @@ namespace Tools
             GoIntoWorkingTransform(part.InteractionPoint.position);
             ExecuteBehaviours();
             scenarioManager.LockPlayerMovementAndLook();
+            PlaySound();
             //TODO: Notify when work is done
         }
 

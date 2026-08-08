@@ -17,6 +17,8 @@ public class InteractableVFXDisabler : MonoBehaviour, IInteractableBehaviour
 
     private IEnumerator DisableVFXObjects()
     {
+        if (TryGetComponent<AudioSource>(out var audiosoure))
+            audiosoure.enabled = false;
         yield return new WaitForSeconds(1.5f);
 
         foreach (var effect in effects)

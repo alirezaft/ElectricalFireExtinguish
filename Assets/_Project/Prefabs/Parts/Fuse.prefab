@@ -464,6 +464,10 @@ PrefabInstance:
       propertyPath: partType
       value: 
       objectReference: {fileID: 11400000, guid: bbfde4a7d1add3a469b74c1e5d1603a2, type: 2}
+    - target: {fileID: 1432372490242366586, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: useAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: f391957d549f4d249b785ef8c1476b6c, type: 3}
     - target: {fileID: 1903876594191122706, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
       propertyPath: interactable
       value: 

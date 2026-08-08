@@ -10,6 +10,7 @@ namespace Tools
         [SerializeField] protected InteractionPrompt interactionPrompt;
         public ScenarioManager scenarioManager;
         [SerializeField] protected Highlighter highlighter;
+        [SerializeField] protected AudioClip useAudio;
         
         protected IInteractableBehaviour[] interactableBehaiours;
 
@@ -40,6 +41,12 @@ namespace Tools
                 
                 behaviour.ExecuteBehaviour();
             }
+        }
+
+        protected void PlaySound()
+        {
+            if(useAudio != null)
+                AudioSource.PlayClipAtPoint(useAudio, transform.position);
         }
 
         public abstract void FinishWorking();

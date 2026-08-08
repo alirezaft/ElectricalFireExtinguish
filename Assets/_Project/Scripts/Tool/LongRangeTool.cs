@@ -19,6 +19,7 @@ namespace Tools
         {
             Aim(targetPart.transform);
             ExecuteBehaviours();
+            PlaySound();
             scenarioManager.LockPlayerMovementAndLook();
         }
 

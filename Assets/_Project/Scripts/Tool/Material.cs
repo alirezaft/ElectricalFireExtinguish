@@ -13,6 +13,7 @@ public class Material : Tool
     {
         scenarioManager.PlayerEquipper.UnequipTool();
         scenarioManager.ExecutePartBehaviours();
+        PlaySound();
         Destroy(gameObject);
     }
 }

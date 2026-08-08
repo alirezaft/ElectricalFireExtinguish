@@ -156,6 +156,7 @@ MonoBehaviour:
   walkSpeed: 5
   gravity: -20
   characterController: {fileID: 9054904624523716279}
+  manager: {fileID: 0}
 --- !u!114 &2888767036109787003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 7513211212407457518}
   sensitivity: 0.12
+  manager: {fileID: 0}
 --- !u!114 &-8691735438298967838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noToolEnum: {fileID: 11400000, guid: 7fd33f11423334c4fb89d1971570c8cd, type: 2}
   handPosition: {fileID: 2439267179429646214}
+  toolEquipSound: {fileID: 8300000, guid: 88f04e1fc21f59147855ebf7dd9b8f33, type: 3}
 --- !u!1 &3052674065908177334
 GameObject:
   m_ObjectHideFlags: 0
