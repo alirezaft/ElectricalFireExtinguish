@@ -20,11 +20,18 @@ namespace Player.Control
         [Header("Interaction")] [SerializeField]
         private float interactionDistance = 3f;
 
+        private float originalInteractionDistance;
+
         [SerializeField] private Transform handPosition;
         [SerializeField] private float sphereRadius = 0.25f;
 
 
         private Interactable previousLookedInteractable;
+
+        private void Awake()
+        {
+            originalInteractionDistance = interactionDistance;
+        }
 
         private void Update()
         {
@@ -36,6 +43,16 @@ namespace Player.Control
         {
             InputSystem.actions.FindAction("Interact").performed += OnInteractPressed;
             InputSystem.actions.FindAction("Attack").performed += OnUseToolPressed;
+
+            equipper.OnToolEquipped += OverrideInteractionRange;
+        }
+
+        private void OverrideInteractionRange(Tool tool)
+        {
+            if (tool is LongRangeTool rangeTool)
+                interactionDistance = rangeTool.Range;
+            else
+                interactionDistance = originalInteractionDistance;
         }
 
 
@@ -43,6 +60,8 @@ namespace Player.Control
         {
             InputSystem.actions.FindAction("Interact").performed -= OnInteractPressed;
             InputSystem.actions.FindAction("Attack").performed -= OnUseToolPressed;
+            
+            equipper.OnToolEquipped -= OverrideInteractionRange;
         }
 
         private Interactable FindLookedAtInteractable()

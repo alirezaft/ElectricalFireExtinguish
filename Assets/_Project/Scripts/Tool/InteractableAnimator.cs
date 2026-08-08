@@ -14,14 +14,21 @@ public class InteractableAnimator : MonoBehaviour, IInteractableBehaviour
     {
         if(!isPlayingAnimation)
         {
+            animator.enabled = true;
             isPlayingAnimation = true;
             animator.SetTrigger(Animator.StringToHash(interactionTriggerName));
         }
+    }
+
+    public void AnimationFinished()
+    {
+        isPlayingAnimation = false;
     }
 
     public void FinishBehaviour()
     {
         interactable.FinishWorking();
         isPlayingAnimation = false;
+        // animator.enabled = false;
     }
 }

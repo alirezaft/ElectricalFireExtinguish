@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a247e99ba4f19418e2a8534fb44332, type: 3}
   m_Name: Step18
   m_EditorClassIdentifier: 
-  nextStep: {fileID: 0}
+  nextStep: {fileID: 11400000, guid: 40425093e78f21243be0bbb4f1bbe9ff, type: 2}
   objectiveText: "\u0633\u06CC\u0645 \u0632\u0631\u062F \u0633\u0648\u062E\u062A\u0647
     \u0631\u0627 \u0628\u0627 \u0633\u06CC\u0645 \u0633\u0627\u0644\u0645 \u062C\u0627\u06CC\u06AF\u0632\u06CC\u0646
     \u06A9\u0646\u06CC\u062F"
