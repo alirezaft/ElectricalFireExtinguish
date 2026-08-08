@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Player.Control;
 using Tools;
+using Unity.VisualScripting;
 using UnityEngine;
 using Material = Tools.Material;
 
@@ -9,6 +11,8 @@ namespace GameManager
 {
     public class ScenarioManager : MonoBehaviour
     {
+        public static ScenarioManager instance { get; private set; }
+
         [SerializeField] private Step firstStep;
         [SerializeField] private ToolType noToolType;
         public ToolType NoToolType => noToolType;
@@ -20,11 +24,21 @@ namespace GameManager
         [SerializeField] private CutsceneManager cutsceneManager;
         public Equipper PlayerEquipper => playerEquipper;
 
-        [SerializeField] private Tool[] tools;
-        [SerializeField] private Part[] parts;
+        [SerializeField] private List<Tool> tools;
+        [SerializeField] private List<Part> parts;
 
         private int currentStepIndex = 1;
         public event Action<Step, int> OnStepChange;
+
+
+        public void Awake()
+        {
+            if(instance is not null && instance != this)
+                Destroy(this);
+            
+            if (instance is null)
+                instance = this;
+        }
 
         private void Start()
         {
@@ -117,6 +131,11 @@ namespace GameManager
             player.GetComponent<PlayerMovementController>().enabled = true;
             player.GetComponent<PlayerLookController>().enabled = true;
             player.GetComponent<PlayerInteractionController>().enabled = true;
+        }
+
+        public void RegisterInteractable(Part part)
+        {
+            parts.Add(part);
         }
     }
 }

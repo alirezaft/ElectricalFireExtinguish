@@ -11648,6 +11648,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4ddef6e679bcb094aa4118a52260d3d6, type: 2}
     - target: {fileID: 1505164122124467862, guid: 252788d9a58a86f4fa9c5ffad0bd75ab, type: 3}
+      propertyPath: shootingOrigin
+      value: 
+      objectReference: {fileID: 616310757601480888}
+    - target: {fileID: 1505164122124467862, guid: 252788d9a58a86f4fa9c5ffad0bd75ab, type: 3}
       propertyPath: holdingRotation.y
       value: 90
       objectReference: {fileID: 0}

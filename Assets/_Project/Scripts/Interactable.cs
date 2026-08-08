@@ -8,14 +8,17 @@ namespace Tools
     public abstract class Interactable : MonoBehaviour
     {
         [SerializeField] protected InteractionPrompt interactionPrompt;
-        [SerializeField] protected ScenarioManager scenarioManager;
+        public ScenarioManager scenarioManager;
         [SerializeField] protected Highlighter highlighter;
-        [SerializeField] protected IInteractableBehaviour[] interactableBehaiours;
+        
+        protected IInteractableBehaviour[] interactableBehaiours;
 
 
         private void Awake()
         {
             interactableBehaiours = GetComponents<IInteractableBehaviour>();
+            if(scenarioManager is null)
+                scenarioManager = ScenarioManager.instance;
         }
 
         public virtual void Focus()
