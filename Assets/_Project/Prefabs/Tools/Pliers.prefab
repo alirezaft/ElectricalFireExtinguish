@@ -229,6 +229,14 @@ PrefabInstance:
       propertyPath: holdingRotation.z
       value: 333.03308
       objectReference: {fileID: 0}
+    - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: workingRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: workingRotation.y
+      value: 22.038015
+      objectReference: {fileID: 0}
     - target: {fileID: 2152826458684225900, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_Controller
       value: 

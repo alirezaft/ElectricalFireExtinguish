@@ -1,3 +1,4 @@
+using System;
 using Tools;
 using UnityEngine;
 
@@ -7,18 +8,21 @@ namespace Tools
     {
         [SerializeField] private Transform operationPoint;
         public Transform OperationPoint => operationPoint;
-        
+
+        [SerializeField] private Vector3 workingRotation;
+        public Vector3 WorkingRotation => workingRotation;
+
         public override void Use(Part part)
         {
             transform.parent = null;
-            MoveToPartInteractionPoint(part.InteractionPoint.position);
+            GoIntoWorkingTransform(part.InteractionPoint.position);
             ExecuteBehaviours();
-            //TODO: Go in working rotation
             //TODO: Notify when work is done
         }
 
-        public void MoveToPartInteractionPoint(Vector3 partPosition)
+        private void GoIntoWorkingTransform(Vector3 partPosition)
         {
+            transform.rotation = Quaternion.Euler(workingRotation);
             transform.MoveChildTo(operationPoint, partPosition);
         }
 

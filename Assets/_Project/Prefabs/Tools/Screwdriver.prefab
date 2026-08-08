@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: holdingRotation.z
       value: 345.68048
       objectReference: {fileID: 0}
+    - target: {fileID: -7690627155318198076, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: workingRotation.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 2152826458684225900, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_Controller
       value: 
@@ -113,7 +117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4934209964718187475, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1287
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934209964718187475, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.132
       objectReference: {fileID: 0}
     - target: {fileID: 5484651335063235840, guid: 64a33e82d78b0f54881deef60ee4a2b4, type: 3}
       propertyPath: m_Height

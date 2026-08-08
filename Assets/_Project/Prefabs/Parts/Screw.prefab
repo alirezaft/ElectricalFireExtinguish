@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: interactable
       value: 
       objectReference: {fileID: 2292912089537351716}
+    - target: {fileID: 2026119652587332809, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0719
+      objectReference: {fileID: 0}
     - target: {fileID: 2938533732462612897, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
       propertyPath: m_Controller
       value: 
