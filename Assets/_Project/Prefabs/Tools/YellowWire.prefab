@@ -169,6 +169,10 @@ PrefabInstance:
       propertyPath: toolType
       value: 
       objectReference: {fileID: 11400000, guid: ba3a4a810600e554b802e65a08025636, type: 2}
+    - target: {fileID: 6722271342709640346, guid: 9d91394a15db2054eb8846736e409184, type: 3}
+      propertyPath: holdingRotation.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7301117060572080634, guid: 9d91394a15db2054eb8846736e409184, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
