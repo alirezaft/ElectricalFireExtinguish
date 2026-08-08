@@ -17,6 +17,7 @@ namespace Tools
             transform.parent = null;
             GoIntoWorkingTransform(part.InteractionPoint.position);
             ExecuteBehaviours();
+            scenarioManager.LockPlayerMovementAndLook();
             //TODO: Notify when work is done
         }
 
@@ -30,6 +31,7 @@ namespace Tools
         {
             scenarioManager.PlayerEquipper.PutInHand(this);
             scenarioManager.ExecutePartBehaviours();
+            scenarioManager.UnlockPlayerMovementAndLook();
         }
     }
 }

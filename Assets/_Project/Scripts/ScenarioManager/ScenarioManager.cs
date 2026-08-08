@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Player.Control;
 using Tools;
 using UnityEngine;
 using Material = Tools.Material;
@@ -102,6 +103,20 @@ namespace GameManager
             if (currentStep is not PartInteractionStep step) return false;
 
             return step.RequiredTool != NoToolType;
+        }
+
+        public void LockPlayerMovementAndLook()
+        {
+            player.GetComponent<PlayerMovementController>().enabled = false;
+            player.GetComponent<PlayerLookController>().enabled = false;
+            player.GetComponent<PlayerInteractionController>().enabled = false;
+        }
+        
+        public void UnlockPlayerMovementAndLook()
+        {
+            player.GetComponent<PlayerMovementController>().enabled = true;
+            player.GetComponent<PlayerLookController>().enabled = true;
+            player.GetComponent<PlayerInteractionController>().enabled = true;
         }
     }
 }
