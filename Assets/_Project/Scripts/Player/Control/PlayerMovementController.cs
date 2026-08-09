@@ -1,3 +1,4 @@
+using System;
 using GameManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,8 @@ namespace Player.Control
         [SerializeField] private float gravity = -20f;
 
         [SerializeField] private CharacterController characterController;
-        [SerializeField] private ScenarioManager manager; 
+        [SerializeField] private ScenarioManager manager;
+        [SerializeField] private DestroyComponentsOnScenarioFinish destroyer;
 
         private InputAction moveAction;
 
@@ -21,19 +23,9 @@ namespace Player.Control
             moveAction = InputSystem.actions.FindAction("Move");
         }
 
-        private void OnDisable()
+        private void Start()
         {
-            manager.OnScenarioFinish -= DestroySelf;
-        }
-
-        private void OnEnable()
-        {
-            manager.OnScenarioFinish += DestroySelf;
-        }
-
-        private void DestroySelf()
-        {
-            Destroy(this);
+            destroyer.AddToList(this);
         }
 
         private void Update()

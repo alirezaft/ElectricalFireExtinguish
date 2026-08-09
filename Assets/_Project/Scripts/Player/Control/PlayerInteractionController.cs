@@ -1,3 +1,4 @@
+using System;
 using GameManager;
 using Interactables;
 using Interactables.Tools;
@@ -15,6 +16,7 @@ namespace Player.Control
         [SerializeField] private Equipper equipper;
         [SerializeField] private ScenarioManager scenarioManager;
         [SerializeField] private InteractionManager interactionManager;
+        [SerializeField] private DestroyComponentsOnScenarioFinish destroyer;
 
         [Header("Interaction")] [SerializeField]
         private float interactionDistance = 3f;
@@ -32,9 +34,9 @@ namespace Player.Control
             originalInteractionDistance = interactionDistance;
         }
 
-        private void DestorySelf()
+        private void Start()
         {
-            Destroy(this);
+            destroyer.AddToList(this);
         }
 
         private void Update()
@@ -49,7 +51,6 @@ namespace Player.Control
             InputSystem.actions.FindAction("Attack").performed += OnUseToolPressed;
 
             equipper.OnToolEquipped += OverrideInteractionRange;
-            scenarioManager.OnScenarioFinish += DestorySelf;
         }
 
         private void OverrideInteractionRange(Tool tool)
@@ -67,7 +68,6 @@ namespace Player.Control
             InputSystem.actions.FindAction("Attack").performed -= OnUseToolPressed;
             
             equipper.OnToolEquipped -= OverrideInteractionRange;
-            scenarioManager.OnScenarioFinish -= DestorySelf;
 
         }
 

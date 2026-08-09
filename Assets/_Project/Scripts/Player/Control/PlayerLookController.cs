@@ -1,3 +1,4 @@
+using System;
 using GameManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace Player.Control
         [SerializeField] private Transform cameraPivot;
         [SerializeField] private float sensitivity = 0.12f;
         [SerializeField] private ScenarioManager manager;
+        [SerializeField] private DestroyComponentsOnScenarioFinish destroyer;
 
         private InputAction lookAction;
 
@@ -23,21 +25,9 @@ namespace Player.Control
 
         }
 
-        private void DestroySelf()
+        private void Start()
         {
-            Debug.Log("Look controller destroyed?");
-            Destroy(this);
-            Destroy(GetComponent<CharacterController>());
-        }
-
-        private void OnDisable()
-        {
-            manager.OnScenarioFinish -= DestroySelf;
-        }
-
-        private void OnEnable()
-        {
-            manager.OnScenarioFinish += DestroySelf;
+            destroyer.AddToList(this);
         }
 
         private void Update()

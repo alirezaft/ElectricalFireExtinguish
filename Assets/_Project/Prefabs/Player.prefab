@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2888767036109787003}
   - component: {fileID: -8691735438298967838}
   - component: {fileID: 4845738551146832898}
+  - component: {fileID: 7635229063868331396}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -78,6 +79,7 @@ MonoBehaviour:
   gravity: -20
   characterController: {fileID: 9054904624523716279}
   manager: {fileID: 0}
+  destroyer: {fileID: 7635229063868331396}
 --- !u!114 &2888767036109787003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,9 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78397c2db4a29f4499eeca4f37f933f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPivot: {fileID: 7764520585932375541}
+  cameraPivot: {fileID: 7513211212407457518}
   sensitivity: 0.12
   manager: {fileID: 0}
+  destroyer: {fileID: 7635229063868331396}
 --- !u!114 &-8691735438298967838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +112,7 @@ MonoBehaviour:
   equipper: {fileID: 4845738551146832898}
   scenarioManager: {fileID: 0}
   interactionManager: {fileID: 0}
+  destroyer: {fileID: 7635229063868331396}
   interactionDistance: 1.5
   handPosition: {fileID: 2439267179429646214}
   sphereRadius: 0.36
@@ -127,6 +131,19 @@ MonoBehaviour:
   noToolEnum: {fileID: 11400000, guid: 7fd33f11423334c4fb89d1971570c8cd, type: 2}
   handPosition: {fileID: 2439267179429646214}
   toolEquipSound: {fileID: 8300000, guid: 88f04e1fc21f59147855ebf7dd9b8f33, type: 3}
+--- !u!114 &7635229063868331396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742659391885781973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c654a879809134e974540d0cb3562d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1 &3052674065908177334
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +295,6 @@ GameObject:
   m_Component:
   - component: {fileID: 965069129089028287}
   - component: {fileID: 385414042487614358}
-  - component: {fileID: 4345123600414182458}
   - component: {fileID: 7848821123680660586}
   m_Layer: 0
   m_Name: ToolCamera
@@ -353,14 +369,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4345123600414182458
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3335650742098404647}
-  m_Enabled: 1
 --- !u!114 &7848821123680660586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +456,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5839062593448749667}
   - component: {fileID: 106256501945352921}
-  - component: {fileID: 2934396939259621054}
   - component: {fileID: 5827128925348175786}
   m_Layer: 0
   m_Name: InteractionPromptCamera
@@ -523,14 +530,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2934396939259621054
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7053469000545337136}
-  m_Enabled: 1
 --- !u!114 &5827128925348175786
 MonoBehaviour:
   m_ObjectHideFlags: 0
