@@ -109,7 +109,7 @@ MonoBehaviour:
   equipper: {fileID: 4845738551146832898}
   scenarioManager: {fileID: 0}
   interactionManager: {fileID: 0}
-  interactionDistance: 2.5
+  interactionDistance: 1.5
   handPosition: {fileID: 2439267179429646214}
   sphereRadius: 0.36
 --- !u!114 &4845738551146832898
