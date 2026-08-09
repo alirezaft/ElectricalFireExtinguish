@@ -73,7 +73,7 @@ namespace Player.Control
         private Interactable FindLookedAtInteractable()
         {
             var hits = Physics.SphereCastAll(playerCamera.transform.position, sphereRadius, playerCamera.transform.forward,
-                interactionDistance);
+                interactionDistance, ~(1 << LayerMask.NameToLayer("FPSOverlay")));
             
             if (hits.Length > 0)
             {

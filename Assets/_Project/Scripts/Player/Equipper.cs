@@ -21,17 +21,31 @@ public class Equipper : MonoBehaviour
             CurrentTool.FireOnUnequip();
             DetachCurrentToolFromHand();
             PutCurrentToolDown();
+            
+            SetGameLayerRecursive(currentTool.gameObject, LayerMask.NameToLayer("FPSOverlay"));
         }
         
-        tool.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        SetGameLayerRecursive(tool.gameObject, LayerMask.NameToLayer("FPSOverlay"));
+        
         PutInHand(tool);
-        
         currentTool = tool;
-        
-        
         OnToolEquipped?.Invoke(tool);
         tool.FireOnEquip();
     }
+    
+    private void SetGameLayerRecursive(GameObject target, int layer)
+    {
+        target.layer = layer;
+        foreach (Transform child in target.transform)
+        {
+            child.gameObject.layer = layer;
+            
+            if ( child.childCount > 0)
+                SetGameLayerRecursive(child.gameObject, layer);
+              
+        }
+    }
+
 
     private void DetachCurrentToolFromHand()
     {

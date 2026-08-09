@@ -4106,14 +4106,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2439267179429646214, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.311
-      objectReference: {fileID: 0}
-    - target: {fileID: 2439267179429646214, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.61
-      objectReference: {fileID: 0}
     - target: {fileID: 2887828857347887390, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: manager
       value: 
@@ -4122,10 +4114,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 944005120}
-    - target: {fileID: 8007159064288742466, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4609,6 +4597,10 @@ PrefabInstance:
       propertyPath: endUIText
       value: 
       objectReference: {fileID: 1667364212}
+    - target: {fileID: 6007316384331232953, guid: c81c25b3f185b9a44a0ad3c937fb0f6b, type: 3}
+      propertyPath: firstStep
+      value: 
+      objectReference: {fileID: 11400000, guid: a0c9211504ab9194997a67ae85dd90f3, type: 2}
     - target: {fileID: 6007316384331232953, guid: c81c25b3f185b9a44a0ad3c937fb0f6b, type: 3}
       propertyPath: playerEquipper
       value: 
