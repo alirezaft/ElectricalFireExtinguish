@@ -30,7 +30,6 @@ namespace Player.Control
         private void Awake()
         {
             originalInteractionDistance = interactionDistance;
-            scenarioManager.OnScenarioFinish += DestorySelf;
         }
 
         private void DestorySelf()
@@ -50,6 +49,7 @@ namespace Player.Control
             InputSystem.actions.FindAction("Attack").performed += OnUseToolPressed;
 
             equipper.OnToolEquipped += OverrideInteractionRange;
+            scenarioManager.OnScenarioFinish += DestorySelf;
         }
 
         private void OverrideInteractionRange(Tool tool)
@@ -67,6 +67,8 @@ namespace Player.Control
             InputSystem.actions.FindAction("Attack").performed -= OnUseToolPressed;
             
             equipper.OnToolEquipped -= OverrideInteractionRange;
+            scenarioManager.OnScenarioFinish -= DestorySelf;
+
         }
 
         private Interactable FindLookedAtInteractable()

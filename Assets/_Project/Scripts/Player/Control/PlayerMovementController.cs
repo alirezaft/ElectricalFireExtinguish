@@ -19,7 +19,6 @@ namespace Player.Control
         private void Awake()
         {
             moveAction = InputSystem.actions.FindAction("Move");
-            manager.OnScenarioFinish += DestroySelf;
         }
 
         private void OnDisable()

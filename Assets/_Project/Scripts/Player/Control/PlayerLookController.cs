@@ -21,7 +21,6 @@ namespace Player.Control
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            manager.OnScenarioFinish += DestroySelf;
         }
 
         private void DestroySelf()
