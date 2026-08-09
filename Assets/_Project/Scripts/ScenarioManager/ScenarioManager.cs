@@ -80,6 +80,7 @@ namespace GameManager
             else
             {
                 Debug.Log("FINISH!!");
+                OnStepChange?.Invoke(currentStep, currentStepIndex);
                 FinishScenario();
             }
         }

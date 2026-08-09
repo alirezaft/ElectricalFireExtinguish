@@ -32,6 +32,8 @@ namespace UI
 
         private void UpdateObjectiveText(Step step, int stepIndex)
         {
+            if (step is EndStep) return;
+            
             objectiveText.text = step.ObjectiveText;
         }
     }
