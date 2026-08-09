@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6958108548532499256}
   - component: {fileID: 2728798825481645261}
   - component: {fileID: 1256793394544889163}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MouseClick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +158,7 @@ MonoBehaviour:
   interactionPrompt: {fileID: 4365329959872653172}
   scenarioManager: {fileID: 0}
   highlighter: {fileID: 6766872161554794341}
+  useAudio: {fileID: 0}
   partType: {fileID: 0}
   interactionPoint: {fileID: 2026119652587332809}
 --- !u!95 &2938533732462612897
@@ -337,8 +338,20 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5554356892907019558, guid: 20ae72ca90ec96749a754f654847a604, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554356892907019558, guid: 20ae72ca90ec96749a754f654847a604, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859923227915906873, guid: 20ae72ca90ec96749a754f654847a604, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778824701869841433, guid: 20ae72ca90ec96749a754f654847a604, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
