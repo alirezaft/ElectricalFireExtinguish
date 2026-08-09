@@ -1,8 +1,8 @@
-using System;
 using GameManager;
+using GameManager.Steps;
 using UnityEngine;
 
-namespace Tools
+namespace Interactables
 {
     public class StepStartAnimation : MonoBehaviour
     {

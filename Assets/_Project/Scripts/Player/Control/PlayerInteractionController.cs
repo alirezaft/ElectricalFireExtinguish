@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
 using GameManager;
-using Tools;
+using Interactables;
+using Interactables.Tools;
+using Interactables.Parts;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Player.Control
 {

@@ -1,8 +1,10 @@
-using Parts;
-using Tools;
+using Interactables.Parts;
+using Interactables;
+using Interactables.Parts;
+using Interactables.Tools;
 using UnityEngine;
 
-namespace GameManager
+namespace GameManager.Steps
 {
     [CreateAssetMenu(menuName = "Game/Step/Part Interaction Step", fileName = "NewPartInteractionStep")]
     public class PartInteractionStep : Step

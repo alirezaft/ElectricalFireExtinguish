@@ -1,9 +1,8 @@
 using System;
-using Parts;
-using Tools;
+using Interactables;
 using UnityEngine;
 
-namespace GameManager
+namespace GameManager.Steps
 {
     public abstract class Step : ScriptableObject
     {

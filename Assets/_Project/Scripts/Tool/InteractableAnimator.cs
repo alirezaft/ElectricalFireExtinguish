@@ -1,34 +1,35 @@
-using Tools;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class InteractableAnimator : MonoBehaviour, IInteractableBehaviour
+namespace Interactables.Behaviours
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private string interactionTriggerName;
-    [SerializeField] private Interactable interactable;
-
-    private bool isPlayingAnimation;
-    
-    public void ExecuteBehaviour()
+    public class InteractableAnimator : MonoBehaviour, IInteractableBehaviour
     {
-        if(!isPlayingAnimation)
+        [SerializeField] private Animator animator;
+        [SerializeField] private string interactionTriggerName;
+        [SerializeField] private Interactable interactable;
+
+        private bool isPlayingAnimation;
+
+        public void ExecuteBehaviour()
         {
-            animator.enabled = true;
-            isPlayingAnimation = true;
-            animator.SetTrigger(Animator.StringToHash(interactionTriggerName));
+            if (!isPlayingAnimation)
+            {
+                animator.enabled = true;
+                isPlayingAnimation = true;
+                animator.SetTrigger(Animator.StringToHash(interactionTriggerName));
+            }
         }
-    }
 
-    public void AnimationFinished()
-    {
-        isPlayingAnimation = false;
-    }
+        public void AnimationFinished()
+        {
+            isPlayingAnimation = false;
+        }
 
-    public void FinishBehaviour()
-    {
-        interactable.FinishWorking();
-        isPlayingAnimation = false;
-        // animator.enabled = false;
+        public void FinishBehaviour()
+        {
+            interactable.FinishWorking();
+            isPlayingAnimation = false;
+            // animator.enabled = false;
+        }
     }
 }

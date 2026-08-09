@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class InteractionPrompt : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private GameObject toolInteractionPromptUI;
-
-    public void EnableInteractionUI()
+    public class InteractionPrompt : MonoBehaviour
     {
-        toolInteractionPromptUI.SetActive(true);
-    }
+        [SerializeField] private GameObject toolInteractionPromptUI;
 
-    public void DisableInteractionUI()
-    {
-        toolInteractionPromptUI.SetActive(false);
+        public void EnableInteractionUI()
+        {
+            toolInteractionPromptUI.SetActive(true);
+        }
+
+        public void DisableInteractionUI()
+        {
+            toolInteractionPromptUI.SetActive(false);
+        }
     }
 }

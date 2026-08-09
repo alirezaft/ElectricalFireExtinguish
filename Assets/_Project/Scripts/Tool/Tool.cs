@@ -1,9 +1,10 @@
 using System;
-using GameManager;
+using GameManager.Steps;
+using Interactables.Parts;
 using UnityEngine;
-using VisualEffects;
+using Utils;
 
-namespace Tools
+namespace Interactables.Tools
 {
     public abstract class Tool : Interactable
     {

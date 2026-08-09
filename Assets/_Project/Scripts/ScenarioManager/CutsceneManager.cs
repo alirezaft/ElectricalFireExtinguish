@@ -1,26 +1,27 @@
-using GameManager;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class CutsceneManager : MonoBehaviour
+namespace GameManager
 {
-    [SerializeField] private ScenarioManager scenarioManager;
-    [SerializeField] private PlayableDirector director;
-    [SerializeField] private GameObject ui;
-    [SerializeField] private GameObject player;
-
-    public void PlayCutscene(PlayableAsset asset)
+    public class CutsceneManager : MonoBehaviour
     {
-        ui.SetActive(false);
-        player.SetActive(false);
-        director.Play(asset);
-        
-    }
+        [SerializeField] private ScenarioManager scenarioManager;
+        [SerializeField] private PlayableDirector director;
+        [SerializeField] private GameObject ui;
+        [SerializeField] private GameObject player;
 
-    public void OnCutsceneFinished()
-    {
-        ui.SetActive(true);
-        player.SetActive(true);
-        scenarioManager.GoToNextStep();
+        public void PlayCutscene(PlayableAsset asset)
+        {
+            ui.SetActive(false);
+            player.SetActive(false);
+            director.Play(asset);
+        }
+
+        public void OnCutsceneFinished()
+        {
+            ui.SetActive(true);
+            player.SetActive(true);
+            scenarioManager.GoToNextStep();
+        }
     }
 }

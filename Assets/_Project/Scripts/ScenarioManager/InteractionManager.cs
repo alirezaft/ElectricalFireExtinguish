@@ -1,14 +1,14 @@
-using GameManager;
-using Tools;
+using Interactables;
 using UnityEngine;
 
+namespace GameManager{
 public class InteractionManager : MonoBehaviour
 {
     [SerializeField] private ScenarioManager scenarioManager;
 
     public bool AttemptInteraction(Interactable interactable)
     {
-        if(scenarioManager.IsCurrentInteraction(interactable))
+        if (scenarioManager.IsCurrentInteraction(interactable))
         {
             interactable.Focus();
             return true;
@@ -21,4 +21,5 @@ public class InteractionManager : MonoBehaviour
     {
         interactable.Unfocus();
     }
+}
 }

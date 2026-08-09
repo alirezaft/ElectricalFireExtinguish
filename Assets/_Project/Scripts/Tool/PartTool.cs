@@ -1,8 +1,8 @@
-using System;
-using Tools;
 using UnityEngine;
+using Interactables.Parts;
+using Utils;
 
-namespace Tools
+namespace Interactables.Tools
 {
     public class PartTool : Tool
     {

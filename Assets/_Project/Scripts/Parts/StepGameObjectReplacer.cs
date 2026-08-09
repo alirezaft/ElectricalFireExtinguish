@@ -1,7 +1,8 @@
-using System;
 using GameManager;
+using GameManager.Steps;
 using UnityEngine;
 
+namespace Interactables.Parts{
 public class StepGameObjectReplacer : GameObjectReplacer
 {
     [SerializeField] private int targetStepIndex = 0;
@@ -19,4 +20,5 @@ public class StepGameObjectReplacer : GameObjectReplacer
             Replace();
         }
     }
+}
 }

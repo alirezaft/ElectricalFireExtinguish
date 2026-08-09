@@ -1,20 +1,20 @@
-using Tools;
-using UnityEngine;
+using Interactables.Parts;
 
-namespace Tools{
-public class Material : Tool
+namespace Interactables.Tools
 {
-    public override void FinishWorking()
+    public class Material : Tool
     {
-        throw new System.NotImplementedException();
-    }
+        public override void FinishWorking()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public override void Use(Part targetPart)
-    {
-        scenarioManager.PlayerEquipper.UnequipTool();
-        scenarioManager.ExecutePartBehaviours();
-        PlaySound();
-        Destroy(gameObject);
+        public override void Use(Part targetPart)
+        {
+            scenarioManager.PlayerEquipper.UnequipTool();
+            scenarioManager.ExecutePartBehaviours();
+            PlaySound();
+            Destroy(gameObject);
+        }
     }
-}
 }

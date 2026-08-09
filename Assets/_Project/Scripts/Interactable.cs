@@ -1,9 +1,11 @@
 using System;
 using GameManager;
+using Interactables.Behaviours;
+using UI;
 using UnityEngine;
 using VisualEffects;
 
-namespace Tools
+namespace Interactables
 {
     public abstract class Interactable : MonoBehaviour
     {
@@ -36,7 +38,7 @@ namespace Tools
         {
             foreach (var behaviour in interactableBehaiours)
             {
-                if (behaviour is DestroyInteractableBehaviour)
+                if (behaviour is DestroySelfBehaviour)
                     continue;
                 
                 behaviour.ExecuteBehaviour();

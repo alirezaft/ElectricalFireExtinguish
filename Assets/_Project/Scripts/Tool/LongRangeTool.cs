@@ -1,7 +1,7 @@
-using Tools;
+using Interactables.Parts;
 using UnityEngine;
 
-namespace Tools
+namespace Interactables.Tools
 {
     public class LongRangeTool : Tool
     {

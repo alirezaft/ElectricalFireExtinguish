@@ -1,36 +1,38 @@
-using System;
 using UnityEngine;
 using GameManager;
+using GameManager.Steps;
 using RTLTMPro;
 
-public class ObjectiveText : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private RTLTextMeshPro objectiveText;
-    [SerializeField] private ScenarioManager scenarioManager;
-    
-    private void OnEnable()
+    public class ObjectiveText : MonoBehaviour
     {
-        scenarioManager.OnStepChange += UpdateObjectiveText;
-        scenarioManager.OnScenarioFinish += DestroyGameObject;
-    }
+        [SerializeField] private RTLTextMeshPro objectiveText;
+        [SerializeField] private ScenarioManager scenarioManager;
 
-    private void DestroyGameObject()
-    {
-        scenarioManager.OnStepChange -= UpdateObjectiveText;
-        scenarioManager.OnScenarioFinish += DestroyGameObject;
-        
-        Destroy(gameObject);
-    }
+        private void OnEnable()
+        {
+            scenarioManager.OnStepChange += UpdateObjectiveText;
+            scenarioManager.OnScenarioFinish += DestroyGameObject;
+        }
 
-    private void OnDisable()
-    {
-        scenarioManager.OnStepChange -= UpdateObjectiveText;
-        scenarioManager.OnScenarioFinish += DestroyGameObject;
+        private void DestroyGameObject()
+        {
+            scenarioManager.OnStepChange -= UpdateObjectiveText;
+            scenarioManager.OnScenarioFinish += DestroyGameObject;
 
-    }
+            Destroy(gameObject);
+        }
 
-    private void UpdateObjectiveText(Step step, int stepIndex)
-    {
-        objectiveText.text = step.ObjectiveText;
+        private void OnDisable()
+        {
+            scenarioManager.OnStepChange -= UpdateObjectiveText;
+            scenarioManager.OnScenarioFinish += DestroyGameObject;
+        }
+
+        private void UpdateObjectiveText(Step step, int stepIndex)
+        {
+            objectiveText.text = step.ObjectiveText;
+        }
     }
 }

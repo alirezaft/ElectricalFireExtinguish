@@ -1,7 +1,8 @@
-using Tools;
+using Interactables;
+using Interactables.Tools;
 using UnityEngine;
 
-namespace GameManager
+namespace GameManager.Steps
 {
     [CreateAssetMenu(menuName = ("Game/Step/Equip Tool Step"), fileName = "NewEquipToolStep")]
     public class EquipToolStep : Step

@@ -1,8 +1,8 @@
-using Tools;
+using Interactables;
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace GameManager
+namespace GameManager.Steps
 {
     [CreateAssetMenu(menuName = "Game/Step/Cutscene Step", fileName = "NewCutsceneStep")]
     public class CutsceneStep : Step

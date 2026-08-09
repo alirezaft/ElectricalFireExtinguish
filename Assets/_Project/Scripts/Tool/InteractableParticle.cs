@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class InteractableParticle : MonoBehaviour, IInteractableBehaviour
+namespace Interactables.Behaviours
 {
-    [SerializeField] private ParticleSystem particles;
-
-    public void ExecuteBehaviour()
+    public class InteractableParticle : MonoBehaviour, IInteractableBehaviour
     {
-        particles.Play();
-    }
+        [SerializeField] private ParticleSystem particles;
 
-    public void FinishBehaviour()
-    {
-        particles.Stop();
+        public void ExecuteBehaviour()
+        {
+            particles.Play();
+        }
+
+        public void FinishBehaviour()
+        {
+            particles.Stop();
+        }
     }
 }

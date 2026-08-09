@@ -1,11 +1,15 @@
 using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using GameManager.Steps;
 using Player.Control;
-using Tools;
-using Unity.VisualScripting;
-using UnityEngine;
-using Material = Tools.Material;
+using Interactables;
+using Interactables.Parts;
+using Interactables.Tools;
+using Player;
+using UI;
+using Material = Interactables.Tools.Material;
 
 namespace GameManager
 {

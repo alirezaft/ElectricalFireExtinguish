@@ -1,12 +1,15 @@
 using RTLTMPro;
 using UnityEngine;
 
-public class EndUIText : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private RTLTextMeshPro endText;
-    
-    public void SetText(string text)
+    public class EndUIText : MonoBehaviour
     {
-        endText.text = text;
+        [SerializeField] private RTLTextMeshPro endText;
+
+        public void SetText(string text)
+        {
+            endText.text = text;
+        }
     }
 }

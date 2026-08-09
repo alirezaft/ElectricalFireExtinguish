@@ -2,28 +2,32 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class InteractableVFXDisabler : MonoBehaviour, IInteractableBehaviour
+namespace Interactables.Behaviours
 {
-    [SerializeField] private VisualEffect[] effects;
-    public void ExecuteBehaviour()
+    public class InteractableVFXDisabler : MonoBehaviour, IInteractableBehaviour
     {
-        foreach (var effect in effects)
+        [SerializeField] private VisualEffect[] effects;
+
+        public void ExecuteBehaviour()
         {
-            effect.Stop();
+            foreach (var effect in effects)
+            {
+                effect.Stop();
+            }
+
+            StartCoroutine(DisableVFXObjects());
         }
 
-        StartCoroutine(DisableVFXObjects());
-    }
-
-    private IEnumerator DisableVFXObjects()
-    {
-        if (TryGetComponent<AudioSource>(out var audiosoure))
-            audiosoure.enabled = false;
-        yield return new WaitForSeconds(1.5f);
-
-        foreach (var effect in effects)
+        private IEnumerator DisableVFXObjects()
         {
-            effect.gameObject.SetActive(false);
+            if (TryGetComponent<AudioSource>(out var audiosoure))
+                audiosoure.enabled = false;
+            yield return new WaitForSeconds(1.5f);
+
+            foreach (var effect in effects)
+            {
+                effect.gameObject.SetActive(false);
+            }
         }
     }
 }

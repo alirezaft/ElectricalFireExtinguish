@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public interface IInteractableBehaviour
+namespace Interactables.Behaviours
 {
-    public void ExecuteBehaviour();
+    public interface IInteractableBehaviour
+    {
+        public void ExecuteBehaviour();
+    }
 }
