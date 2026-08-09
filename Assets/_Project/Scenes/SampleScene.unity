@@ -3665,11 +3665,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 106256501945352921, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
   m_PrefabInstance: {fileID: 580352521011995321}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1973645424 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7513211212407457518, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
-  m_PrefabInstance: {fileID: 580352521011995321}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2081611080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4163,10 +4158,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 944005120}
-    - target: {fileID: 2888767036109787003, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
-      propertyPath: cameraPivot
-      value: 
-      objectReference: {fileID: 1973645424}
     - target: {fileID: 3754745071024724642, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: m_Cameras.Array.size
       value: 2
@@ -4175,12 +4166,15 @@ PrefabInstance:
       propertyPath: 'm_Cameras.Array.data[1]'
       value: 
       objectReference: {fileID: 1907293022}
+    - target: {fileID: 7635229063868331396, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 944005120}
     - target: {fileID: 9054904624523716279, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
       propertyPath: m_Height
       value: 2.76
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4345123600414182458, guid: dc8ea44f1c9e4eb4f8a7af8f83cc42ef, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
