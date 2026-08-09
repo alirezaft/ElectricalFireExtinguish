@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: partType
       value: 
       objectReference: {fileID: 11400000, guid: 304fc46eee168a2479a2a05c6e5ddad2, type: 2}
+    - target: {fileID: 1432372490242366586, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
+      propertyPath: useAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e1cebc658cf8054fa1d0eb8bc962247, type: 3}
     - target: {fileID: 2026119652587332809, guid: fbb0636205a40be4baa20b9b0e6a81c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.683
